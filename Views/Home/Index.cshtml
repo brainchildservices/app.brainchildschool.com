@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="form-Container">
+    <form>
+        <div class="col-md-12">
+            <div class="form-group">
+                <h3>What is your email address?<span>*</span></h3><br />
+                <p>This helps us to answer questions you might have throughout the application process.</p>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <h3>What is your cell phone number?<span>*</span></h3><br />
+                <input type="number" class="form-control" id="mobileno" placeholder="Mobile Number*">
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="termsConditions" for="communication-consent">By checking this box, you are opting-in to receive text messages from Lambda School regarding your application, admissions process, and other Lambda School promotions and programs. You also agree to the following <a target="_blank" href="#" class="cursor-pointer font-sans text-blue-600 underline cursor-pointer" rel="noopener noreferrer">Terms</a> &amp; the Lambda School <a target="_blank" href="#" class="cursor-pointer font-sans text-blue-600 underline cursor-pointer" rel="noopener noreferrer">Privacy Policy</a>. Reply STOP to cancel. Consent not required as a condition of enrollment.</label><br /><br />
+            </div>
+
+            <!-- Start Course Selection-->
+            <div class="lambda-toggle-container grid grid-cols-2 gap-6">
+                <button class="course-form-section" value="As a web developer, you get to translate your passion into a functional website or web application to share with the world. You’ll learn in demand skills like HTML, CSS, JavaScript, React.js, Python, SQL, and Node, and put them to the test building realistic, collaborative projects for your portfolio." id="full-stack-web" type="button" onclick="htmlContent()">
+                    <i class="fal fa-laptop-code text-6xl" aria-hidden="true"></i>
+                    <h3 class="course-head">Full Stack Web</h3>
+                </button>
+                <button class="course-form-section" value="CS Web Dev" id="full-stack-web" type="button">
+                    <i class="fal fa-laptop-code text-6xl" aria-hidden="true"></i>
+                    <h3 class="course-head">Data Science</h3>
+                </button>
+            </div>
+            <!--End Course Selection-->
+
+            <div class="schedule">
+                <h3>Which schedule works for you?<span>*</span></h3><br />
+                <p id="pText">Select an option to learn more about it.</p>
+                <button class="course-form-section" value="As a data scientist, you'll utilize statistics and mathematics with the latest computational techniques to help the most innovative companies in the world scale. If you enjoy mathematics and love using data to make decisions, a career in data science could be for you." id="full-stack-web" type="button">
+                    <i class="fal fa-laptop-code text-6xl" aria-hidden="true"></i>
+                    <h3 class="course-head">Full Time</h3>
+                </button>
+                <button class="course-form-section" value="CS Web Dev" id="full-stack-web" type="button">
+                    <i class="fal fa-laptop-code text-6xl" aria-hidden="true"></i>
+                    <h3 class="course-head">Part Time</h3>
+                </button>
+
+
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+
+
+<script type="text/javascript">
+    function changeText(value) {
+        document.getElementById('pText').innerHTML = "You pressed " + value;
+    }
+</script>
+
