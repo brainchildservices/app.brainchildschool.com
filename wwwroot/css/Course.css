@@ -1,0 +1,45 @@
+﻿
+.form-Container {
+    width: 100% !important;
+    align-items: center !important;
+}
+
+.pb-3 {
+    align-items: center;
+}
+
+.form-group span,
+.schedule span {
+    color: red;
+}
+
+
+
+.form-group h3 {
+    font-weight: 400 !important;
+    float:left;
+    color: rgba(76,83,94,var(--tw-text-opacity)) !important;
+    font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,noto sans,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji !important;
+}
+
+.form-check {
+    display: inline-block;
+}
+
+.course-form-section {
+    padding: 50px 70px;
+    border-radius: 5px;
+    margin: 1rem;
+    border: none;
+}
+
+    .course-form-section::selection {
+        padding: 50px 70px;
+        border-radius: 5px;
+        margin: 1rem;
+        font-weight: bold;
+    }
+
+    .course-form-section h3::after {
+        font-weight: bold;
+    }
