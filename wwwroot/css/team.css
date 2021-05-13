@@ -1,5 +1,5 @@
 .team-banner-area {
-    background: url(../img/banner-bg1.png) no-repeat bottom;
+    background: url(../img/home-banner-bg.png) no-repeat bottom;
     background-position: bottom;
     min-height: 510px;
 }
@@ -135,8 +135,9 @@
     font-weight: 400;
 }
 
-.team-feature-item p {
+.team-feature-item #pText {
     margin-bottom: 0px;
     font-size: 11px;
     line-height: normal;
+    text-align: left;
 }
