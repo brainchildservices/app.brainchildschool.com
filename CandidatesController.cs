@@ -1,0 +1,160 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using SimpleApp.Dbcontext;
+using SimpleApp.Models;
+
+namespace SimpleApp
+{
+    public class CandidatesController : Controller
+    {
+        private readonly CanditateDbContext _context;
+
+        public CandidatesController(CanditateDbContext context)
+        {
+            _context = context;
+        }
+
+        // GET: Candidates
+        public async Task<IActionResult> Index()
+        {
+            var canditateDbContext = _context.CandidateDetails.Include(c => c.EducationLevel);
+            return View(await canditateDbContext.ToListAsync());
+        }
+
+        // GET: Candidates/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var candidateDetails = await _context.CandidateDetails
+                .Include(c => c.EducationLevel)
+                .FirstOrDefaultAsync(m => m.CandidateID == id);
+            if (candidateDetails == null)
+            {
+                return NotFound();
+            }
+
+            return View(candidateDetails);
+        }
+
+        // GET: Candidates/Create
+        public IActionResult Create()
+        {
+            ViewData["TypeId"] = new SelectList(_context.EducationLevel, "TypeId", "EducationType");
+            return View();
+        }
+
+        // POST: Candidates/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("CandidateID,EmailID,MobileNo,TypeId,Shedule,Attendance,Message")] CandidateDetails candidateDetails)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(candidateDetails);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["TypeId"] = new SelectList(_context.EducationLevel, "TypeId", "EducationType", candidateDetails.TypeId);
+            return View(candidateDetails);
+        }
+
+        // GET: Candidates/Edit/5
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var candidateDetails = await _context.CandidateDetails.FindAsync(id);
+            if (candidateDetails == null)
+            {
+                return NotFound();
+            }
+            ViewData["TypeId"] = new SelectList(_context.EducationLevel, "TypeId", "EducationType", candidateDetails.TypeId);
+            return View(candidateDetails);
+        }
+
+        // POST: Candidates/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("CandidateID,EmailID,MobileNo,TypeId,Shedule,Attendance,Message")] CandidateDetails candidateDetails)
+        {
+            if (id != candidateDetails.CandidateID)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(candidateDetails);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!CandidateDetailsExists(candidateDetails.CandidateID))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["TypeId"] = new SelectList(_context.EducationLevel, "TypeId", "EducationType", candidateDetails.TypeId);
+            return View(candidateDetails);
+        }
+
+        // GET: Candidates/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var candidateDetails = await _context.CandidateDetails
+                .Include(c => c.EducationLevel)
+                .FirstOrDefaultAsync(m => m.CandidateID == id);
+            if (candidateDetails == null)
+            {
+                return NotFound();
+            }
+
+            return View(candidateDetails);
+        }
+
+        // POST: Candidates/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var candidateDetails = await _context.CandidateDetails.FindAsync(id);
+            _context.CandidateDetails.Remove(candidateDetails);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private bool CandidateDetailsExists(int id)
+        {
+            return _context.CandidateDetails.Any(e => e.CandidateID == id);
+        }
+    }
+}

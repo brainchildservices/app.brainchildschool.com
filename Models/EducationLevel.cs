@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace SimpleApp.Models
 {
-    public class QualificationType
+    public class EducationLevel
     {
         [Key]
         public int TypeId { get; set; }
         [Required]
-        public string Qualifications { get; set; }
-    
-}
+        public string EducationType { get; set; }
+    }
 }

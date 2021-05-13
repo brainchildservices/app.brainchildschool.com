@@ -14,5 +14,6 @@ namespace SimpleApp.Dbcontext
 
         }
         public DbSet<CandidateDetails> CandidateDetails { get; set; }
+        public DbSet<EducationLevel> EducationLevel { get; set; }
     }
 }
