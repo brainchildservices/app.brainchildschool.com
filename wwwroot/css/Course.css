@@ -1,11 +1,7 @@
-﻿
-.form-Container {
+﻿.form-Container {
     width: 100% !important;
     align-items: center !important;
-}
-
-.pb-3 {
-    align-items: center;
+    text-align:center;
 }
 
 .form-group span,
@@ -13,13 +9,12 @@
     color: red;
 }
 
-
-
 .form-group h3 {
+    text-align: left;
     font-weight: 400 !important;
-    float:left;
-    color: rgba(76,83,94,var(--tw-text-opacity)) !important;
-    font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,noto sans,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji !important;
+    text-transform: uppercase;
+    color: #888c94 !important;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, helvetica neue, Arial, noto sans, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol, noto color emoji !important;
 }
 
 .form-check {
@@ -27,19 +22,91 @@
 }
 
 .course-form-section {
-    padding: 50px 70px;
-    border-radius: 5px;
+    align-items: center;
+    text-align:center;
+    border-radius: 15px;
     margin: 1rem;
     border: none;
+    height: 200px;
+    width: 300px;
+    border: 2px solid;
+
+    border-color: #bbbbbb;
 }
 
     .course-form-section::selection {
-        padding: 50px 70px;
-        border-radius: 5px;
         margin: 1rem;
         font-weight: bold;
+        height: 180px;
+        width: 250px;
+        border-color: #888c94;
     }
 
     .course-form-section h3::after {
         font-weight: bold;
+        border-radius: 15px;
     }
+
+.form-group p #note {
+    margin: 5px;
+    font-weight: 400 !important;
+    float: left !important;
+    color: rgba(76, 83, 94, var(--tw-text-opacity)) !important;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, helvetica neue, Arial, noto sans, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol, noto color emoji !important;
+}
+
+.fa-graduation-cap {
+    color: #5c5f64 !important;
+    margin-bottom: 1rem;
+}
+
+.fa-hat-cowboy {
+    color: #5c5f64 !important;
+    margin-bottom: 1rem;
+}
+
+.fa-hourglass {
+    color: #5c5f64 !important;
+    margin-bottom: 1rem;
+}
+
+.fa-hourglass-start {
+    color: #5c5f64 !important;
+    margin-bottom: 1rem;
+}
+
+.fa-check-circle {
+    color: #5c5f64 !important;
+    margin-bottom: 1rem;
+}
+
+.fa-times-circle {
+    color: #5c5f64 !important;
+    margin-bottom: 1rem;
+}
+
+#course-head {
+    font-weight: 400 !important;
+    text-transform: uppercase;
+    font-size: 20px;
+    text-align: center !important;
+    align-items: center !important;
+    color: #888c94
+}
+
+small{
+    text-align:left !important;
+}
+
+.btn-primary {
+    width: 50%;
+    height: 100%;
+    background-color: #5c5f64 !important;
+    font-weight:bold;
+}
+
+#subject{
+    width:100%;
+    height:15rem;
+    border-radius: 15px;
+}

@@ -1182,7 +1182,7 @@ th {
 }
 
 .home-banner-area {
-    background: url(../img/home-banner-bg.png) no-repeat;
+    background: url("/wwwroot/img/banner-bg.png") no-repeat;
     background-size: cover;
     background-position: center center;
     max-height: 1200px;
