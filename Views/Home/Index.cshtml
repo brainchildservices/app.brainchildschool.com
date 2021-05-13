@@ -1,11 +1,13 @@
-﻿@{
+﻿@model SimpleApp.Models.CandidateDetails
+@{
     ViewData["Title"] = "Home Page";
 }
 <div class="form-Container">
-    
+
     <form>
         <div class="col-md-12">
             <div class="form-group">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <section>
                     <h3>What is your email address?<span>*</span></h3>
                     <p id="notes">This helps us to answer questions you might have throughout the application process.</p>
@@ -83,15 +85,17 @@
                     </div>
                 </div>
             </section>
+
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="termsConditions" for="communication-consent">By checking this box, you are opting-in to receive text messages from Lambda School regarding your application, admissions process, and other Lambda School promotions and programs. You also agree to the following <a target="_blank" href="#" class="cursor-pointer font-sans text-blue-600 underline cursor-pointer" rel="noopener noreferrer">Terms</a> &amp; the Lambda School <a target="_blank" href="#" class="cursor-pointer font-sans text-blue-600 underline cursor-pointer" rel="noopener noreferrer">Privacy Policy</a>. Reply STOP to cancel. Consent not required as a condition of enrollment.</label><br /><br />
             </div>
 
-
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
-</form>
+        </div>
+    </form>
 </div>
 
 
