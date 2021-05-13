@@ -55,12 +55,12 @@
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, helvetica neue, Arial, noto sans, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol, noto color emoji !important;
 }
 
-.fa-laptop-code {
+.fa-graduation-cap {
     color: #5c5f64 !important;
     margin-bottom: 1rem;
 }
 
-.fa-server {
+.fa-hat-cowboy {
     color: #5c5f64 !important;
     margin-bottom: 1rem;
 }
@@ -103,4 +103,10 @@ small{
     height: 100%;
     background-color: #5c5f64 !important;
     font-weight:bold;
+}
+
+#subject{
+    width:100%;
+    height:15rem;
+    border-radius: 15px;
 }
