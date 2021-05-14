@@ -9,8 +9,8 @@ using SimpleApp.Dbcontext;
 namespace SimpleApp.Migrations
 {
     [DbContext(typeof(CanditateDbContext))]
-    [Migration("20210513201411_addedtables")]
-    partial class addedtables
+    [Migration("20210514095554_ChangesMade")]
+    partial class ChangesMade
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

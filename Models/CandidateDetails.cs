@@ -18,13 +18,10 @@ namespace SimpleApp.Models
         public int TypeId { get; set; }
         [ForeignKey("TypeId")]
         public EducationLevel EducationLevel { get; set; }
-        [Required]
         public Shedule Shedule { get; set; }
         [Required]
         public String Attendance { get; set; }
         [Required]
         public string Message { get; set; }
-
-
     }
 }

@@ -10,23 +10,23 @@ using SimpleApp.Models;
 
 namespace SimpleApp
 {
-    public class CandidatesController : Controller
+    public class CandidateDetailsController : Controller
     {
         private readonly CanditateDbContext _context;
 
-        public CandidatesController(CanditateDbContext context)
+        public CandidateDetailsController(CanditateDbContext context)
         {
             _context = context;
         }
 
-        // GET: Candidates
+        // GET: CandidateDetails
         public async Task<IActionResult> Index()
         {
             var canditateDbContext = _context.CandidateDetails.Include(c => c.EducationLevel);
             return View(await canditateDbContext.ToListAsync());
         }
 
-        // GET: Candidates/Details/5
+        // GET: CandidateDetails/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -45,14 +45,14 @@ namespace SimpleApp
             return View(candidateDetails);
         }
 
-        // GET: Candidates/Create
+        // GET: CandidateDetails/Create
         public IActionResult Create()
         {
             ViewData["TypeId"] = new SelectList(_context.EducationLevel, "TypeId", "EducationType");
             return View();
         }
 
-        // POST: Candidates/Create
+        // POST: CandidateDetails/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -69,7 +69,7 @@ namespace SimpleApp
             return View(candidateDetails);
         }
 
-        // GET: Candidates/Edit/5
+        // GET: CandidateDetails/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -86,7 +86,7 @@ namespace SimpleApp
             return View(candidateDetails);
         }
 
-        // POST: Candidates/Edit/5
+        // POST: CandidateDetails/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -122,7 +122,7 @@ namespace SimpleApp
             return View(candidateDetails);
         }
 
-        // GET: Candidates/Delete/5
+        // GET: CandidateDetails/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -141,7 +141,7 @@ namespace SimpleApp
             return View(candidateDetails);
         }
 
-        // POST: Candidates/Delete/5
+        // POST: CandidateDetails/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

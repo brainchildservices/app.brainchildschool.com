@@ -2,7 +2,7 @@
 
 namespace SimpleApp.Migrations
 {
-    public partial class addedtables : Migration
+    public partial class ChangesMade : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

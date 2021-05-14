@@ -9,41 +9,36 @@
 <h4>CandidateDetails</h4>
 <hr />
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <h3>What is your email address?<span>*</span></h3>
-                <p id="notes">This helps us to answer questions you might have throughout the application process.</p>
+                <label asp-for="EmailID" class="control-label"></label>
                 <input asp-for="EmailID" class="form-control" />
                 <span asp-validation-for="EmailID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <h3>What is your cell phone number?<span>*</span></h3>
-                <p id="notes">This helps us to answer questions you might have throughout the application process.</p>
+                <label asp-for="MobileNo" class="control-label"></label>
                 <input asp-for="MobileNo" class="form-control" />
                 <span asp-validation-for="MobileNo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <h3>Are you a Graduate Holder?<span>*</span></h3>
-                <p id="notes">Select an option to learn more about it.</p>
+                <label asp-for="TypeId" class="control-label"></label>
                 <select asp-for="TypeId" class ="form-control" asp-items="ViewBag.TypeId"></select>
             </div>
-            <div class="form-group">
-                <h3>Which schedule works for you?<span>*</span></h3>
-                <p id="notes">Select an option to learn more about it.</p>
-                <select asp-for="Shedule" class="form-control" asp-items="@Html.GetEnumSelectList<Shedule>()"></select>
+            @*<div class="form-group">
+                <label asp-for="Shedule" class="control-label"></label>
+                <select asp-for="Shedule" class="form-control"></select>
                 <span asp-validation-for="Shedule" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
-                <h3>Are you able to attend 95% of classes?<span>*</span></h3>
-                <p id="notes">Attending 95% of classes means you can only miss 1 day a month.</p>
+                <label asp-for="Attendance" class="control-label"></label>
                 <input asp-for="Attendance" class="form-control" />
                 <span asp-validation-for="Attendance" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <h3>Why do you want a Career?<span>*</span></h3><br/>
-                <input asp-for="Message" class="form-control" id="subject"/>
+                <label asp-for="Message" class="control-label"></label>
+                <input asp-for="Message" class="form-control" />
                 <span asp-validation-for="Message" class="text-danger"></span>
             </div>
             <div class="form-group">
