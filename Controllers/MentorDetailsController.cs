@@ -10,23 +10,22 @@ using SimpleApp.Models;
 
 namespace SimpleApp
 {
-    public class CandidateDetailsController : Controller
+    public class MentorDetailsController : Controller
     {
         private readonly CanditateDbContext _context;
 
-        public CandidateDetailsController(CanditateDbContext context)
+        public MentorDetailsController(CanditateDbContext context)
         {
             _context = context;
         }
 
-        // GET: CandidateDetails
+        // GET: MentorDetails
         public async Task<IActionResult> Index()
         {
-            var canditateDbContext = _context.CandidateDetails.Include(c => c.EducationLevel);
-            return View(await canditateDbContext.ToListAsync());
+            return View(await _context.MentorDetails.ToListAsync());
         }
 
-        // GET: CandidateDetails/Details/5
+        // GET: MentorDetails/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,42 +33,39 @@ namespace SimpleApp
                 return NotFound();
             }
 
-            var candidateDetails = await _context.CandidateDetails
-                .Include(c => c.EducationLevel)
-                .FirstOrDefaultAsync(m => m.CandidateID == id);
-            if (candidateDetails == null)
+            var mentorDetails = await _context.MentorDetails
+                .FirstOrDefaultAsync(m => m.MentorID == id);
+            if (mentorDetails == null)
             {
                 return NotFound();
             }
 
-            return View(candidateDetails);
+            return View(mentorDetails);
         }
 
-        // GET: CandidateDetails/Apply
-        public IActionResult Apply()
+        // GET: MentorDetails/Create
+        public IActionResult Create()
         {
-            ViewData["TypeId"] = new SelectList(_context.EducationLevel, "TypeId", "EducationType");
             return View();
         }
 
-        // POST: CandidateDetails/Apply
+        // POST: MentorDetails/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Apply([Bind("CandidateID,EmailID,MobileNo,TypeId,Shedule,Attendance,Message")] CandidateDetails candidateDetails)
+        public async Task<IActionResult> Create([Bind("MentorID,EmailID,MobileNo,Qualification,Attendance,Resume")] MentorDetails mentorDetails)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(candidateDetails);
+                _context.Add(mentorDetails);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TypeId"] = new SelectList(_context.EducationLevel, "TypeId", "EducationType", candidateDetails.TypeId);
-            return View(candidateDetails);
+            return View(mentorDetails);
         }
 
-        // GET: CandidateDetails/Edit/5
+        // GET: MentorDetails/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,23 +73,22 @@ namespace SimpleApp
                 return NotFound();
             }
 
-            var candidateDetails = await _context.CandidateDetails.FindAsync(id);
-            if (candidateDetails == null)
+            var mentorDetails = await _context.MentorDetails.FindAsync(id);
+            if (mentorDetails == null)
             {
                 return NotFound();
             }
-            ViewData["TypeId"] = new SelectList(_context.EducationLevel, "TypeId", "EducationType", candidateDetails.TypeId);
-            return View(candidateDetails);
+            return View(mentorDetails);
         }
 
-        // POST: CandidateDetails/Edit/5
+        // POST: MentorDetails/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CandidateID,EmailID,MobileNo,TypeId,Shedule,Attendance,Message")] CandidateDetails candidateDetails)
+        public async Task<IActionResult> Edit(int id, [Bind("MentorID,EmailID,MobileNo,Qualification,Attendance,Resume")] MentorDetails mentorDetails)
         {
-            if (id != candidateDetails.CandidateID)
+            if (id != mentorDetails.MentorID)
             {
                 return NotFound();
             }
@@ -102,12 +97,12 @@ namespace SimpleApp
             {
                 try
                 {
-                    _context.Update(candidateDetails);
+                    _context.Update(mentorDetails);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CandidateDetailsExists(candidateDetails.CandidateID))
+                    if (!MentorDetailsExists(mentorDetails.MentorID))
                     {
                         return NotFound();
                     }
@@ -118,11 +113,10 @@ namespace SimpleApp
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TypeId"] = new SelectList(_context.EducationLevel, "TypeId", "EducationType", candidateDetails.TypeId);
-            return View(candidateDetails);
+            return View(mentorDetails);
         }
 
-        // GET: CandidateDetails/Delete/5
+        // GET: MentorDetails/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,31 +124,30 @@ namespace SimpleApp
                 return NotFound();
             }
 
-            var candidateDetails = await _context.CandidateDetails
-                .Include(c => c.EducationLevel)
-                .FirstOrDefaultAsync(m => m.CandidateID == id);
-            if (candidateDetails == null)
+            var mentorDetails = await _context.MentorDetails
+                .FirstOrDefaultAsync(m => m.MentorID == id);
+            if (mentorDetails == null)
             {
                 return NotFound();
             }
 
-            return View(candidateDetails);
+            return View(mentorDetails);
         }
 
-        // POST: CandidateDetails/Delete/5
+        // POST: MentorDetails/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var candidateDetails = await _context.CandidateDetails.FindAsync(id);
-            _context.CandidateDetails.Remove(candidateDetails);
+            var mentorDetails = await _context.MentorDetails.FindAsync(id);
+            _context.MentorDetails.Remove(mentorDetails);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CandidateDetailsExists(int id)
+        private bool MentorDetailsExists(int id)
         {
-            return _context.CandidateDetails.Any(e => e.CandidateID == id);
+            return _context.MentorDetails.Any(e => e.MentorID == id);
         }
     }
 }
