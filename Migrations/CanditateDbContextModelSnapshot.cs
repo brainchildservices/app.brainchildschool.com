@@ -18,6 +18,34 @@ namespace SimpleApp.Migrations
                 .HasAnnotation("ProductVersion", "5.0.6")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("SimpleApp.Models.BussinessDetails", b =>
+                {
+                    b.Property<int>("BussinessID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("EmailID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MobileNo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Subject")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("BussinessID");
+
+                    b.ToTable("BussinessDetails");
+                });
+
             modelBuilder.Entity("SimpleApp.Models.CandidateDetails", b =>
                 {
                     b.Property<int>("CandidateID")
@@ -38,6 +66,7 @@ namespace SimpleApp.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MobileNo")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Shedule")
@@ -67,6 +96,36 @@ namespace SimpleApp.Migrations
                     b.HasKey("TypeId");
 
                     b.ToTable("EducationLevel");
+                });
+
+            modelBuilder.Entity("SimpleApp.Models.MentorDetails", b =>
+                {
+                    b.Property<int>("MentorID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Attendance")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EmailID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MobileNo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Qualification")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Resume")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MentorID");
+
+                    b.ToTable("MentorDetails");
                 });
 
             modelBuilder.Entity("SimpleApp.Models.CandidateDetails", b =>

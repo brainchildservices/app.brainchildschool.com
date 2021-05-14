@@ -14,13 +14,14 @@ namespace SimpleApp.Models
         [Required]
         public string EmailID { get; set; }
         [Phone]
+        [Required]
         public string MobileNo { get; set; }
         public int TypeId { get; set; }
         [ForeignKey("TypeId")]
         public EducationLevel EducationLevel { get; set; }
         public Shedule Shedule { get; set; }
         [Required]
-        public String Attendance { get; set; }
+        public string Attendance { get; set; }
         [Required]
         public string Message { get; set; }
     }

@@ -12,9 +12,32 @@
 .form-group h3 {
     text-align: left;
     font-weight: 400 !important;
+    font-size: 20px;
     text-transform: uppercase;
     color: #888c94 !important;
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, helvetica neue, Arial, noto sans, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol, noto color emoji !important;
+}
+
+@media screen and (max-width:400px) {
+    .form-group h3 {
+        text-align: left;
+        font-weight: 400 !important;
+        font-size: 14px !important;
+        text-transform: uppercase;
+        color: #888c94 !important;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, helvetica neue, Arial, noto sans, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol, noto color emoji !important;
+    }
+}
+
+@media (min-width:768px) {
+    .form-group h3 {
+        text-align: left;
+        font-weight: 400 !important;
+        font-size: 18px !important;
+        text-transform: uppercase;
+        color: #888c94 !important;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, helvetica neue, Arial, noto sans, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol, noto color emoji !important;
+    }
 }
 
 .form-check {
@@ -111,11 +134,20 @@ small {
     border-radius: 15px;
 }
 
-#butn {
+.form-group #butn {
     text-align: center;
 }
 
 .form-control #message {
     height: 15rem;
     width: 100%;
+}
+
+#radiobtn {
+    margin: 5px;
+}
+
+#butn {
+    text-align: center;
+    margin-top: 1.5rem;
 }
