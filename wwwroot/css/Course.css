@@ -111,11 +111,21 @@ small {
     border-radius: 15px;
 }
 
-#butn {
+.form-group #butn {
     text-align: center;
 }
 
 .form-control #message {
     height: 15rem;
     width: 100%;
+}
+
+#radiobtn {
+    margin: 5px;
+}
+
+#butn {
+    text-align: center;
+    align-items: center;
+    margin-top: 1.5rem;
 }

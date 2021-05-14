@@ -45,8 +45,8 @@ namespace SimpleApp
             return View(candidateDetails);
         }
 
-        // GET: CandidateDetails/Create
-        public IActionResult Create()
+        // GET: CandidateDetails/Apply
+        public IActionResult Apply()
         {
             ViewData["TypeId"] = new SelectList(_context.EducationLevel, "TypeId", "EducationType");
             return View();
@@ -57,7 +57,7 @@ namespace SimpleApp
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CandidateID,EmailID,MobileNo,TypeId,Shedule,Attendance,Message")] CandidateDetails candidateDetails)
+        public async Task<IActionResult> Apply([Bind("CandidateID,EmailID,MobileNo,TypeId,Shedule,Attendance,Message")] CandidateDetails candidateDetails)
         {
             if (ModelState.IsValid)
             {

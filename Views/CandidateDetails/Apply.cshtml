@@ -1,0 +1,70 @@
+﻿@model SimpleApp.Models.CandidateDetails
+
+@{
+    ViewData["Title"] = "Apply";
+}
+
+<h1>Candidates Application Form</h1><br/>
+
+<h4>Please  Fill up the form, we'll contact you soon.</h4><br/>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Apply">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <h3>Email Address<span> *</span></h3><br/>
+                <input asp-for="EmailID" class="form-control" />
+                <span asp-validation-for="EmailID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <h3>Mobile Number<span> *</span></h3><br />
+                <input asp-for="MobileNo" class="form-control" />
+                <span asp-validation-for="MobileNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <h3>Educational Quallification<span>*</span></h3><br />
+                <select asp-for="TypeId" class ="form-control" asp-items="ViewBag.TypeId"></select>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="Shedule" class="control-label"></label>
+                <select asp-for="Shedule" class="form-control"></select>
+                <span asp-validation-for="Shedule" class="text-danger"></span>
+            </div>*@
+        <div class="form-group">
+            <h3>Attendance<span>*</span></h3><br />
+            <label class="radio-inline"><input type="radio" id="radiobtn" name="attendance" value="Yes"> Yes</label>
+            <label class="radio-inline"><input type="radio" id="radiobtn" name="attendance" value="No"> No</label>
+            <span asp-validation-for="Attendance" class="text-danger"></span>
+        </div>
+            <div class="form-group">
+                <h3>Please Let us know why you choose this as a career option?<span>*</span></h3><br />
+                <input id="subject" asp-for="Message" class="form-control" />
+                <span asp-validation-for="Message" class="text-danger"></span>
+            </div>
+            <div class="col-md-12">
+            <div class="form-group" id="butn">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="termsConditions" for="communication-consent">By checking this box, you are opting-in to receive text messages from Lambda School regarding your application, admissions process, and other Lambda School promotions and programs. You also agree to the following <a target="_blank" href="#" class="cursor-pointer font-sans text-blue-600 underline cursor-pointer" rel="noopener noreferrer">Terms</a> &amp; the Lambda School <a target="_blank" href="#" class="cursor-pointer font-sans text-blue-600 underline cursor-pointer" rel="noopener noreferrer">Privacy Policy</a>. Reply STOP to cancel. Consent not required as a condition of enrollment.</label><br /><br />
+                <input type="submit" value="Apply" class="btn btn-primary" />
+            </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script>
+    var rates = document.getElementById('attendance').value;
+    if (document.getElementById('radiobtn').checked) {
+        rate_value = document.getElementById('radiobtn').value;
+    }
+    else {
+        $("input[type='radio'][name='attendance']:checked").val();
+    }
+</script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
