@@ -63,7 +63,7 @@ namespace SimpleApp
             {
                 _context.Add(candidateDetails);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Success));
+                return RedirectToAction("Success");
             }
             ViewData["TypeId"] = new SelectList(_context.EducationLevel, "TypeId", "EducationType", candidateDetails.TypeId);
             return View(candidateDetails);

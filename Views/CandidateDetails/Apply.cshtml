@@ -41,7 +41,7 @@
             </div>
             <div class="form-group">
                 <h3>Please Let us know why you choose this as a career option?<span>*</span></h3><br />
-                <input id="subject" asp-for="Message" class="form-control" />
+                <textarea asp-for="Message"class="form-control" rows="10" cols="50">Enter text here...</textarea>
                 <span asp-validation-for="Message" class="text-danger"></span>
             </div>
             <div class="col-md-12">

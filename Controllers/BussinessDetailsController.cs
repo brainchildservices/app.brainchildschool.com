@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SimpleApp.Dbcontext;
 using SimpleApp.Models;
+using SimpleApp;    
 
 namespace SimpleApp
 {
@@ -60,7 +61,7 @@ namespace SimpleApp
             {
                 _context.Add(bussinessDetails);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Success));
+                return RedirectToAction("Success");
             }
             return View(bussinessDetails);
         }
@@ -149,7 +150,6 @@ namespace SimpleApp
         {
             return View();
         }
-
         private bool BussinessDetailsExists(int id)
         {
             return _context.BussinessDetails.Any(e => e.BussinessID == id);
