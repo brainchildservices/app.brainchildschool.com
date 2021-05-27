@@ -60,7 +60,7 @@ namespace SimpleApp
             {
                 _context.Add(bussinessDetails);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Success));
             }
             return View(bussinessDetails);
         }
@@ -143,6 +143,11 @@ namespace SimpleApp
             _context.BussinessDetails.Remove(bussinessDetails);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Success()
+        {
+            return View();
         }
 
         private bool BussinessDetailsExists(int id)
