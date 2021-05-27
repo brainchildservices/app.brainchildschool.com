@@ -53,9 +53,31 @@ namespace SimpleApp
 
             app.UseEndpoints(endpoints =>
             {
+
+                endpoints.MapControllerRoute(
+                    name: "uccessful",
+                    pattern: "Success",
+                    defaults: new { controller = "Home", action = "Success" });
+
+                endpoints.MapControllerRoute(
+                    name: "Client",
+                    pattern: "JoinAsPartner",
+                    defaults: new { controller = "BussinessDetails", action = "Create" });
+
+                endpoints.MapControllerRoute(
+                    name: "Mentor",
+                    pattern: "JoinAsMentor",
+                    defaults: new { controller = "MentorDetails", action = "Create" });
+
+                endpoints.MapControllerRoute(
+                    name: "Candidate",
+                    pattern: "Join",
+                    defaults: new { controller = "CandidateDetails", action = "Apply" });
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
             });
         }
     }

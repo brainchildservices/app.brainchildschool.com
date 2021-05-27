@@ -60,7 +60,7 @@ namespace SimpleApp
             {
                 _context.Add(mentorDetails);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Success");
             }
             return View(mentorDetails);
         }
@@ -144,7 +144,10 @@ namespace SimpleApp
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
+        public IActionResult Success()
+        {
+            return View();
+        }
         private bool MentorDetailsExists(int id)
         {
             return _context.MentorDetails.Any(e => e.MentorID == id);

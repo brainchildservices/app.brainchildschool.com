@@ -63,7 +63,7 @@ namespace SimpleApp
             {
                 _context.Add(candidateDetails);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Success");
             }
             ViewData["TypeId"] = new SelectList(_context.EducationLevel, "TypeId", "EducationType", candidateDetails.TypeId);
             return View(candidateDetails);
@@ -150,6 +150,11 @@ namespace SimpleApp
             _context.CandidateDetails.Remove(candidateDetails);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Success()
+        {
+            return View();
         }
 
         private bool CandidateDetailsExists(int id)
