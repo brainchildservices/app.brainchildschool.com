@@ -1,7 +1,15 @@
 .team-banner-area {
-    background: url(../img/home-banner-bg.png) no-repeat bottom;
+    background: url(../img/banner-bg1.png) no-repeat bottom;
     background-position: bottom;
     min-height: 510px;
+}
+
+@media (max-width: 768px) {
+    .team-banner-area {
+        background: url(../img/banner-bg1.png) no-repeat bottom;
+        background-position: bottom;
+        min-height: 610px;
+    }
 }
 
 .team-banner-right {
@@ -17,43 +25,42 @@
 
 @media (max-width: 767px) {
     .team-banner-right h1 {
-        font-size: 30px;
-    }
-}
-
-@media (max-width: 767px) {
-    .team-banner-right p {
-        display: none;
+        font-size: 35px;
     }
 }
 
 .team-banner-right p {
-    font-size: 14px;
+    font-size: 13px;
+}
+
+@media (max-width: 768px) {
+    #paragraph {
+        text-align: justify;
+    }
 }
 
 .team-banner-right .box {
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
+    border-top: 1px solid rgb(116, 116, 116);
+    border-bottom: 1px solid rgb(128, 128, 128);
     padding: 10px 18px;
     display: inline-block;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .team-banner-right .box {
-        padding: 7px 15px;
-        margin-top: 30px;
+        display: none;
     }
 }
 
 .team-banner-right .box i {
-    color: #fff;
+    color: rgb(128, 128, 128);
     font-size: 14px;
     margin: 5px;
     font-weight: 600;
 }
 
 .team-banner-right .box a {
-    color: #fff;
+    color: rgb(126, 126, 126);
     font-size: 14px;
     -webkit-transition: all 0.3s ease 0s;
     -moz-transition: all 0.3s ease 0s;
@@ -135,9 +142,8 @@
     font-weight: 400;
 }
 
-.team-feature-item #pText {
+.team-feature-item p {
     margin-bottom: 0px;
     font-size: 11px;
     line-height: normal;
-    text-align: left;
 }
