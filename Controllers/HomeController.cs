@@ -33,7 +33,7 @@ namespace SimpleApp.Controllers
             return View();
         }
 
-        public IActionResult Hire()
+        public IActionResult HireBrainChild()
         {
             return View();
         }
