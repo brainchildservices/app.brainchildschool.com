@@ -1197,7 +1197,6 @@ th {
     }
 }
 
-
 .layout-banner-area {
     background: url(../img/banner-bg.png) no-repeat;
     background-size: cover;
@@ -1589,7 +1588,7 @@ th {
 }
 
 .single-popular-course .thumb img {
-    width: 100%;
+    width: 25%;
     -webkit-transition: all 0.3s ease 0s;
     -moz-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
