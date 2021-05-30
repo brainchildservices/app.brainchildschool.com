@@ -23,6 +23,22 @@ namespace SimpleApp.Controllers
             return View();
         }
 
+
+        public IActionResult OurTeam()
+        {
+            return View();
+        }
+
+        public IActionResult CourseDetails()
+        {
+            return View();
+        }
+
+        public IActionResult HireBrainChild()
+        {
+            return View();
+        }
+        
         public IActionResult ContactUs()
         {
             return View();
