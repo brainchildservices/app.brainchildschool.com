@@ -60,7 +60,7 @@ namespace SimpleApp
             {
                 _context.Add(mentorDetails);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Success");
+                return RedirectToRoute("success");
             }
             return View(mentorDetails);
         }

@@ -28,7 +28,7 @@
 <!-- ================ End banner Area ================= -->
 <div class="container">
 
-    <h1>Candidates Application Form</h1>
+    <h1>Become a brainchild</h1>
     <br />
 
     <h4>Please  Fill up the form, we'll contact you soon.</h4>
@@ -49,16 +49,22 @@
                     <span asp-validation-for="MobileNo" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <h3>Educational Quallification<span>*</span></h3><br />
-                    <select asp-for="TypeId" class="form-control" asp-items="ViewBag.TypeId"></select>
+                    <h3>Educational Quallification<span>*</span></h3><br />       
+                    <div class=" form-select " id=" default-select">             
+                        <select asp-for="TypeId" class="form-control" asp-items="ViewBag.TypeId"></select>
+                    </div>
+                    
                 </div>
                 <div class="form-group">
                     <h3>Schedule<span>*</span></h3><br />
-                    <select asp-for="Shedule" class="form-control" asp-items="@Html.GetEnumSelectList<Shedule>()"></select>
+                    <div class=" form-select " id=" default-select"> 
+                    <select asp-for="Shedule" asp-items="Html.GetEnumSelectList<Shedule>()"></select>
                     <span asp-validation-for="Shedule" class="text-danger"></span>
+                    <br>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <h3>Attendance<span>*</span></h3><br />
+                    <h3>Will you be able to attend 95% of Classes ?<span>*</span></h3><br />
                     <label class="radio-inline"><input type="radio" id="radiobtn" name="attendance" value="Yes"> Yes</label>
                     <label class="radio-inline"><input type="radio" id="radiobtn" name="attendance" value="No"> No</label>
                     <span asp-validation-for="Attendance" class="text-danger"></span>

@@ -61,7 +61,7 @@ namespace SimpleApp
             {
                 _context.Add(bussinessDetails);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Success");
+                return RedirectToRoute("success");
             }
             return View(bussinessDetails);
         }
