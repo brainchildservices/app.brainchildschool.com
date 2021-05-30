@@ -100,6 +100,7 @@ h6 {
 }
 
 p {
+    margin-top: 0;
     margin-bottom: 1rem
 }
 
@@ -227,12 +228,12 @@ figure {
     align-items: center;
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:415px) {
     #img-logo {
         vertical-align: middle;
         border-style: none;
         height: 40px;
-        content: url("/img/logoMobile.png");
+        content: url("/img/logo.png");
     }
 }
 
@@ -240,7 +241,7 @@ figure {
     #img-logo:hover {
         vertical-align: middle;
         border-style: none;
-        height: 40px;
+        height: 35px;
         content: url("/img/logo.png");
     }
 }
@@ -250,6 +251,15 @@ figure {
         vertical-align: middle;
         border-style: none;
         height: 30px;
+        align-items: center;
+    }
+}
+
+@media (max-width:280px) {
+    #img-logo {
+        vertical-align: middle;
+        border-style: none;
+        height: 25px;
         align-items: center;
     }
 }

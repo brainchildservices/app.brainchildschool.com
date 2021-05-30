@@ -2,106 +2,557 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-<div class="form-Container">
+<body>
+    <!-- ================ start banner Area ================= -->
+    <section class="home-banner-area">
+        <div class="container">
+            <div class="row justify-content-center fullscreen align-items-center">
+                <div class="col-lg-5 col-md-8 home-banner-left">
+                    <h1 class="text-white">
+                        Your one stop solution to guaranteed employment!
+                    </h1>
 
-    <form>
-        <div class="col-md-12">
-            <div class="form-group">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <section>
-                    <h3>What is your email address?<span>*</span></h3>
-                    <p id="notes">This helps us to answer questions you might have throughout the application process.</p>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small><br />
+                    <p class="mx-auto text-white  mt-20 mb-40">
+                        Become a Brainchild, and your high salaried web development career will begin here. In just 24 weeks, you go from novice to a job-ready professional using our Didactic way of learning.
+                    </p>
+                    <div class="row head-button">
+                        <div class="col-md-5">
+                            <a href="#" style="color: #fff;" class="btn btn-block btn-warning btn-md" role="button" aria-pressed="true">APPLY NOW</a>
+                        </div>
+                        <br><br>
+                        <div class="col-md-5">
+                            <a class="btn  btn-sm popup-youtube play-btn" href="https://www.youtube.com/watch?v=eIHKZfgddLM" style="color: #fff;" role="button">
+                                &nbsp;<i class="fa fa-play-circle-o" aria-hidden="true"></i> Watch The Video
+                            </a>
+                        </div>
+                        <div class="col-md-2">
 
-                    <div class="form-group">
-                        <h3>What is your cell phone number?<span>*</span></h3>
-                        <p id="notes">This helps us to answer questions you might have throughout the application process.</p>
-                        <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Mobile Number">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                    </div>
-                </section>
-            </div>
-
-            <!-- Start Course Selection-->
-            <section>
-                <div class="form-group">
-                    <h3>Are you a Graduate Holder?<span>*</span></h3>
-                    <p id="notes">Select an option to learn more about it.</p>
-                    <div class="lambda-toggle-container grid grid-cols-2 gap-6">
-                        <button class="course-form-section" value="As a web developer, you get to translate your passion into a functional website or web application to share with the world. You’ll learn in demand skills like HTML, CSS, JavaScript, React.js, Python, SQL, and Node, and put them to the test building realistic, collaborative projects for your portfolio." id="full-stack-web" type="button" onclick="htmlContent()">
-                            <i class="fas fa-graduation-cap fa-5x" aria-hidden="true"></i>
-                            <h6 id="course-head">Graduate</h6>
-                        </button>
-                        <button class="course-form-section" value="CS Web Dev" id="full-stack-web" type="button">
-                            <i class="fas fa-hat-cowboy fa-5x" aria-hidden="true"></i>
-                            <h6 id="course-head">Undergraduate</h6>
-                        </button>
+                        </div>
                     </div>
                 </div>
-            </section>
-            <!--End Course Selection-->
-            <!-- Start Schedule-->
-            <section>
-                <div class="form-group">
-                    <h3>Which schedule works for you?<span>*</span></h3>
-                    <p id="notes">Select an option to learn more about it.</p>
-                    <div class="lambda-toggle-container grid grid-cols-2 gap-6">
-                        <button class="course-form-section" value="As a data scientist, you'll utilize statistics and mathematics with the latest computational techniques to help the most innovative companies in the world scale. If you enjoy mathematics and love using data to make decisions, a career in data science could be for you." id="full-stack-web" type="button">
-                            <i class="fas fa-hourglass fa-5x" aria-hidden="true"></i>
-                            <h6 id="course-head">Full Time</h6>
-                        </button>
-                        <button class="course-form-section" value="CS Web Dev" id="full-stack-web" type="button">
-                            <div><i class="fas fa-hourglass-start fa-5x" aria-hidden="true"></i></div>
-                            <h6 id="course-head">Part Time</h6>
-                        </button>
-                    </div>
+                <div class="offset-lg-2 col-lg-5 col-md-12 home-banner-right">
+                    <img class="img-fluid" src=/img/header-img.png alt="" />
                 </div>
-            </section>
-            <!--End Schedule-->
-            <!--End Attendance-->
-            <section>
-                <div class="form-group">
-                    <h3>Are you able to attend 95% of classes?<span>*</span></h3>
-                    <p id="notes">Attending 95% of classes means you can only miss 1 day a month.</p>
-                    <div class="lambda-toggle-container grid grid-cols-2 gap-6">
-                        <button class="course-form-section" value="As a data scientist, you'll utilize statistics and mathematics with the latest computational techniques to help the most innovative companies in the world scale. If you enjoy mathematics and love using data to make decisions, a career in data science could be for you." id="full-stack-web" type="button">
-                            <i class="far fa-check-circle fa-5x" aria-hidden="true"></i>
-                            <h6 id="course-head">Yes</h6>
-                        </button>
-                        <button class="course-form-section" value="CS Web Dev" id="full-stack-web" type="button">
-                            <div><i class="fas fa-times-circle fa-5x" aria-hidden="true"></i></div>
-                            <h6 id="course-head">No</h6>
-                        </button>
-                    </div>
-                </div>
-            </section>
-            <!--End Attendance-->
-            <section>
-                <div class="form-group">
-                    <h3>Why do you want a Career?<span>*</span></h3><br />
-                    <div>
-                        <textarea id="subject" name="subject" placeholder="Please Let us know why you choose this as a career option?"></textarea>
-                    </div>
-                </div>
-            </section>
-
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="termsConditions" for="communication-consent">By checking this box, you are opting-in to receive text messages from Lambda School regarding your application, admissions process, and other Lambda School promotions and programs. You also agree to the following <a target="_blank" href="#" class="cursor-pointer font-sans text-blue-600 underline cursor-pointer" rel="noopener noreferrer">Terms</a> &amp; the Lambda School <a target="_blank" href="#" class="cursor-pointer font-sans text-blue-600 underline cursor-pointer" rel="noopener noreferrer">Privacy Policy</a>. Reply STOP to cancel. Consent not required as a condition of enrollment.</label><br /><br />
-            </div>
-
-            <div class="col-md-12">
-                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </div>
-    </form>
-</div>
+    </section>
+    <!-- ================ End banner Area ================= -->
+    <!-- ================ Start Feature Area ================= -->
+    <section class="feature-area">
+        <div class="container-fluid">
+            <div class="feature-inner row">
+                <div class=" col-lg-2 col-md-2">
+                    <div class="feature-item d-flex">
+                        <i class="fa fa-suitcase" aria-hidden="true"></i>
+                        <div class="ml-20">
+                            <h4>Job placement is guaranteed</h4>
+                            <p>
+                                Everyone becomes employable at Brainchild because of our unique programme and creative learning style.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3">
+                    <div class="feature-item d-flex">
+                        <i class="ti-money"></i>
+                        <div class="ml-20">
+                            <h4>Full Refund</h4>
+                            <p>
+                                Become an employable brainchild by paying 50% in advance and 50% once you get a job. If you’re unable to find work within six months of successfully completing the programme, you will get a full refund of your upfront expenses.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-lg-2 col-md-2">
+                    <div class="feature-item d-flex border-right-0">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        <div class="ml-20">
+                            <h4>Networking Begins Here</h4>
+                            <p>
+                                Develop lifetime relationships and friendships with our mentors from Apple, Google, Microsoft, etc who can expose you to new possibilities and provide assistance.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================ End Feature Area ================= -->
+    <!-- ================ Start Blog Post Area ================= -->
+    <section class="blog-post-area section-gap">
+        <div class="container-fluid">
+            <div class="feature-inner row">
+                <div class="col-lg-12">
+                    <div class="section-title text-right">
+                        <h2>
+                            Brainchild Autodidactic Learning - <br />More Than Just Screen Recordings
+                        </h2>
+                        <p>
+                            Learning should be enjoyable and make you employable. Our Didactic learning paradigm is all that and more.
+                        </p>
+                    </div>
+                </div><br />
+                <div class="col-lg-4 col-md-6 mt--260">
+                    <div class="single-blog-post">
+                        <img src="img/blog-post/b3.jpg" class="img-fluid" alt="" />
+                        <div class="overlay"></div>
+                        <div class="top-text">
+                            <p>WHAT</p>
+                            <p>MAKES US</p>
+                            <p>DIFFERENT?</p>
+                        </div>
+                        <div class="text">
+                            <h4 class="text-white"></h4>
+                            <div>
+                                <p>
+                                    We believe in teaching students with the primary goal of hiring each and every one of them, if possible.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-blog-post">
+                        <img src="img/blog-post/b1.jpg" class="img-fluid" alt="" />
+                        <div class="overlay"></div>
+                        <div class="top-text">
+                            <p>WORKING WITH</p>
+                            <p>EXPERTS. LEARN</p>
+                            <p>FROM PROFESSIONALS.</p>
+                        </div>
+                        <div class="text">
+                            <div>
+                                <p>
+                                    Panel of the best and most experienced Advisors out there! Microsoft, Google, Amazon, Wipro, Philips, and many others are among the generous advisors.
+                                </p>
+                            </div>
 
-<script type="text/javascript">
-    function changeText(value) {
-        document.getElementById('pText').innerHTML = "You pressed " + value;
-    }
-</script>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt--160">
+                    <div class="single-blog-post">
+                        <img src="img/blog-post/b2.jpg" class="img-fluid" alt="" />
+                        <div class="overlay"></div>
+                        <div class="top-text">
+                            <p>AID INTER AND</p>
+                            <p>INTRA-PERSONAL</p>
+                            <p>ACADEMIC GROWTH</p>
+                        </div>
+                        <div class="text">
+                            <div>
+                                <p id="cardtext">
+                                    Learning environment that is positive and tailored as per student’s requirement. Usage of game features to help self-learning encourages people to learn from their mistakes, therefore second or third chances are given
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================ End Blog Post Area ================= -->
+    <!-- ================ Start Feature Area ================= -->
+    <section class="other-feature-area">
+        <div class="container">
+            <div class="feature-inner row">
+                <div class="col-lg-12">
+                    <div class="section-title1 text-left">
+                        <h2>
+                            Brainchild School <br /> can guanrantee you
+                        </h2>
+                        <p>
+                            We ensure that you will have high-paying talents that will allow you
+                            <BR /> to make a competitive wage in the realm of software engineering.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="other-feature-item-one">
+                        <i class="ti-key"></i>
+                        <h4>Curriculum that is matched with the needs of the industry</h4>
+                        <div>
+                            <p>
+                                A professional-level education taught by industry professionals and field specialists. Our career advisers will assist you in positively getting hired after the completion of your course.<br /><br /><br />
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="col-lg-4 col-md-6 mt--160">
+                    <div class="other-feature-item-two">
+                        <i class="ti-files"></i>
+                        <h4>Networking is the new learning.</h4>
+                        <div>
+                            <p>
+                                Connecting with others who are both studying and teaching is essential for effective learning. We have been bringing together enthusiastic, experienced educators and motivated students to achieve remarkable results and professions since 2018.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="other-feature-item-three">
+                        <i class="ti-medall-alt"></i>
+                        <h4>Virtual learning with end-to-end guidance</h4>
+                        <div>
+                            <p>
+                                The courses are full-time, and you may complete them in as short as 24 weeks and be job-ready. You'll meet with a career coach one-on-one to obtain a tailored résumé review, assistance with creating your web presence, interview practise, test series,
+                                soft skills coaching and much more.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="other-feature-item-four">
+                        <i class="ti-briefcase"></i>
+                        <h4>Employer network that is always active and supportive</h4>
+                        <div>
+                            <p>
+                                Individuals do not get employment through job boards; they obtain employment from other people. While creating relationships with hiring managers at top worldwide organisations, our Employer Partnerships team is continually lobbying on your behalf.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt--160">
+                    <div class="other-feature-item-five">
+                        <i class="ti-crown"></i>
+                        <h4>Learn from the real-life achievers</h4>
+                        <div>
+                            <p>
+                                Our career coaches train you to achieve success. We know it takes a support system to make big career moves so even before graduation, you’ll work 1-on-1 with a career coach to get personalized catering to your concerns and doubts.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" id="mt260">
+                    <div class="other-feature-item-six">
+                        <i class="ti-headphone-alt"></i>
+                        <h4>Top-notch, constantly updated curriculum</h4>
+                        <div>
+                            <p>
+                                We changed our courses to a live, accelerated style to bring the campus learning experience to you online. Now, you can stay secure while still benefiting from the advantages of campus learning. Live accelerated courses are full-time, and you may complete
+                                them in as short as 15 weeks to become job-ready. Learn from a close-knit group of risk takers and mentors who will make sure that you channel your technical prowess to the fullest.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================ End Feature Area ================= -->
+    <!-- ================ Start Video Area ================= -->
+    <section class="video-area section-gap-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="section-title text-white">
+                        <h2 class="text-white">
+                            Join us <br> for a promising career
+                        </h2>
+                        <p>
+                            Ready to change your life? There is probably no one greater leap forward than joining us.
+                        </p>
+                    </div>
+                </div>
+                <div class="offset-lg-1 col-md-6 video-left">
+                    <div class="owl-carousel video-carousel">
+                        <div class="single-video">
+                            <div class="video-part">
+                                <img class="img-fluid" src=/img/video-img1.jpg alt="">
+                                <div class="overlay"></div>
+                                <a class="popup-youtube play-btn" href="https://www.youtube.com/watch?v=VufDd-QL1c0">
+                                </a>
+                            </div>
+                            <h4 class="text-white mb-20 mt-30">Learning is Fun</h4>
+                            <p class="text-white mb-20">
+                                The Fun Learning Approach – Nurturing A Passion For Learning From The Very Start
+                            </p>
+                        </div>
+
+                        <div class="single-video">
+                            <div class="video-part">
+                                <img class="img-fluid" src=/img/video-img2.jpg alt="">
+                                <div class="overlay"></div>
+                                <a class="popup-youtube play-btn" href="https://www.youtube.com/watch?v=VufDd-QL1c0">
+                                </a>
+                            </div>
+                            <h4 class="text-white mb-20 mt-30">Learn like you are playing a game</h4>
+                            <p class="text-white mb-20">
+                                Brainchild School developed the 'Autodidactic Learning’ approach based on decades of expertise in combination with the best programming practices around the world. It drives motivation, flow, passion and engagement by using fun and innovative ways of
+                                learning
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================ End Video Area ================= -->
+    <!-- ================ Start Popular Course Area ================= -->
+    <section class="popular-course-area section-gap-Video">
+        <div class="container-fluid">
+            <div class="row justify-content-center section-title1">
+                <div class="col-lg-12">
+                    <h2>
+                        As a Fullstack Developer<br />
+                    </h2>
+                    <p>
+                        You will not only study programming and work on projects as a Fullstack Developer during these weeks of training, but you will also be involved in project planning, design, and creative conversations on a daily basis.
+                </div>
+            </div>
+            <div class="owl-carousel popuar-course-carusel">
+                <div class="single-popular-course">
+                    <div class="thumb">
+                        <img class="f-img img-fluid mx-auto" src=/img/popular-course/p1.jpg alt="" />
+                    </div>
+                    <div class="details">
+                        <div class="d-flex justify-content-between mb-20">
+                            <p class="name">Hands-On project</p>
+                            <p class="value">HP00423</p>
+                        </div>
+                        <a href="#">
+                            <h4>Build your portfolio website</h4>
+                        </a>
+                        <div class="bottom d-flex mt-15">
+                            <ul class="list">
+                                <li>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                </li>
+                            </ul>
+                            <p class="ml-20">HTML Expertise</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="single-popular-course">
+                    <div class="thumb">
+                        <img class="f-img img-fluid mx-auto" src=/img/popular-course/p2.jpg alt="" />
+                    </div>
+                    <div class="details">
+                        <div class="d-flex justify-content-between mb-20">
+                            <p class="name">Web Design and Tools</p>
+                            <p class="value">WD00234</p>
+                        </div>
+                        <a href="#">
+                            <h4>Learn CSS Mastery </h4>
+                        </a>
+                        <div class="bottom d-flex mt-15">
+                            <ul class="list">
+                                <li>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                </li>
+                            </ul>
+                            <p class="ml-20">CSS Experience</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="single-popular-course">
+                    <div class="thumb">
+                        <img class="f-img img-fluid mx-auto" src=/img/popular-course/p3.jpg alt="" />
+                    </div>
+                    <div class="details">
+                        <div class="d-flex justify-content-between mb-20">
+                            <p class="name">Learn Programming</p>
+                            <p class="value">LP1923</p>
+                        </div>
+                        <a href="#">
+                            <h4>Learn JS from the ground up </h4>
+                        </a>
+                        <div class="bottom d-flex mt-15">
+                            <ul class="list">
+                                <li>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                </li>
+                            </ul>
+                            <p class="ml-20">gain javascript expertise</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="single-popular-course">
+                    <div class="thumb">
+                        <img class="f-img img-fluid mx-auto" src=/img/popular-course/p4.jpg alt="" />
+                    </div>
+                    <div class="details">
+                        <div class="d-flex justify-content-between mb-20">
+                            <p class="name">Web developement</p>
+                            <p class="value">WD63122</p>
+                        </div>
+                        <a href="#">
+                            <h4>Learn C# </h4>
+                        </a>
+                        <div class="bottom d-flex mt-15">
+                            <ul class="list">
+                                <li>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                </li>
+                            </ul>
+                            <p class="ml-20">Understand C# basics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================ End Popular Course Area ================= -->
+    <!-- ================ Start Registration Area ================= -->
+    <section class="registration-area">
+        <div class="container">
+            <div class="row align-items-end">
+                <div class="col-lg-5">
+                    <div class="section-title text-left text-white">
+                        <h2 class="text-white" id="applyhead">
+                            LET US WRITE YOUR SUCCESS STORY FOR YOU!
+                        </h2>
+                        <P class="text-white" id="applyhead">
+
+                        </P>
+                        <p id="applypara">
+                            Please feel free to drop a note if you would want to see how we function
+                        </p>
+                    </div>
+                </div>
+                <div class=" offset-lg-3 col-lg-4 col-md-6 ">
+                    <div class="course-form-section ">
+                        <h4 class="text-white" id="texthide">LET US HELP YOU UPGRADE TO A WORLD-CLASS TECHNICIAN IN DEMAND!</h4>
+                        <p class="text-white ">We will revert to you</p>
+                        <form class="course-form-area contact-page-form course-form text-right " id="myForm " action="mail.html " method="post ">
+                            <div class="form-group col-md-12 ">
+                                <input type="text " class="form-control " id="name " name="name " placeholder="Name " onfocus="this.placeholder='' " onblur="this.placeholder='Name' ">
+                            </div>
+                            <div class="form-group col-md-12 ">
+                                <input type="text " class="form-control " id="subject " name="subject " placeholder="Phone Number " onfocus="this.placeholder='' " onblur="this.placeholder='Phone Number' ">
+                            </div>
+                            <div class="form-group col-md-12 ">
+                                <input type="email " class="form-control " id="email " name="email " placeholder="Email Address " onfocus="this.placeholder='' " onblur="this.placeholder='Email Address' ">
+                            </div>
+                            <div class="col-lg-12 text-center ">
+                                <button class="btn text-uppercase ">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================ End Registration Area ================= -->
+
+    <!-- ================ Start Testimonials Area ================= -->
+    <section class="testimonials-area section-gap ">
+        <div class="container ">
+            <div class="testi-slider owl-carousel " data-slider-id="1 ">
+                <div class="row align-items-center ">
+                    <div class="col-lg-5 ">
+                        <div class="item ">
+                            <div class="testi-item ">
+                                <div class="mt-40 text ">
+                                    <p>
+                                        A Web App built as simple and intuitive but mirrors our company identity that gives it a face and a soul. Brainchild went above and beyond to make sure that the application was exactly what I had envisioned. I cannot recommend this company enough to people
+                                        they are just amazing!
+                                    </p>
+                                </div>
+                                <h4>Blesson Roy Philip</h4>
+                                <p>Former Student</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offset-lg-1 col-lg-6 ">
+                        <img src="img/testimonial/s1.jpg " alt=" " />
+                    </div>
+                </div>
+                <div class="row align-items-center ">
+                    <div class="col-lg-5 ">
+                        <div class="item ">
+                            <div class="testi-item ">
+                                <div class="mt-40 text ">
+                                    <p>
+                                        Brainchild team is incredible. I was bit skeptical once when I heard that Brainchild trainees would build my website. However, the final product is just amazing because of their new ways to bring more traffic to our sites and kudos to the main team for
+                                        executing such a wonderful project through them. I must also emphasize the business development team who were the one point contact were very easy to communicate and were able to work from concepts rather needing
+                                        me to design the ideas.
+                                    </p>
+                                </div>
+                                <h4>Abhai Raj</h4>
+                                <p>Former Student</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offset-lg-1 col-lg-6 ">
+                        <img src="img/testimonial/s2.jpg " alt=" " />
+                    </div>
+                </div>
+                <div class="row align-items-center ">
+                    <div class="col-lg-5 ">
+                        <div class="item ">
+                            <div class="testi-item ">
+                                <div class="mt-40 text ">
+                                    <p>
+                                        If you are starting a new business or upgrading an existing application, I strongly recommend Brainchild. This process has been an absolute pleasure. Everyone was extremely helpful and responsive to my ideas. They had all the capabilities we needed and
+                                        were able to solve a number of different challenges facing our complex application. I definitely recommend
+                                    </p>
+                                </div>
+                                <h4>Maneesh Chandran</h4>
+                                <p>Former Student</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offset-lg-1 col-lg-6 ">
+                        <img src="img/testimonial/s3.jpg " alt=" " />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================ End Testimonials Area ================= -->
+
+</body>
 

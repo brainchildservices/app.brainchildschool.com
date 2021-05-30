@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>datatype.js – The HTML Presentation Framework</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/sky.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section data-background="https://static.slid.es/reveal/image-placeholder.png">
+                    <h1>JavaScript</h1>
+					<h2>Data types</h2>
+
+				</section>
+				<section>
+					
+					<h2>Data types</h2>
+					<ul>
+                    <li>Data types are a particular type of data item that determines what operations can be applied to them. Once a variable is assigned a data type it can be used for computations in the program.
+					</li>
+                     </ul>	
+				</section>
+
+				
+                <section class="list">
+					<h2>Data types</h2>
+					<ul>
+                    <li> Data types are basically type of data that can be used and manipulated in a program.</li>
+                    <li>For e.g. Numbers(1, 2,3), string(“hello World”),Boolean(true, false) etc. </li>
+                    <li>To be able to operate on variables, it is important to know something about the type.</li>
+                     </ul>	
+				</section>
+				<section class="list">
+					<h2>Data types</h2>
+					<ul>
+                    <li>Without data types, a computer cannot safely solve.</li>
+                    <li>When adding a number and a string, JavaScript will treat the number as a string.</li>
+					<li>JavaScript evaluates expressions from left to right.</li>
+                     </ul>	
+				</section>
+			<section>
+				<img src="images/pic1.jpg">
+			</section>
+			<section>
+				<h2>Number</h2>
+				<ul>
+				<li>Number type stands for both integers and floating points.</li>
+				<li>Many mathematical operations are carried out using these numbers.</li>
+				 </ul>	
+			<data-auto-animate>
+				<h4 data-id="code-title">Example</h4>
+				<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+					var x1 = 34.00;     // Written with decimals
+					var x2 = 34;        // Written without decimals
+				</code></pre>
+
+				<data-auto-animate>
+					<h4 data-id="code-title">wrong syntax Example</h4>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						var x1 = "34.00";// In quotes, represents as strings,not a number
+						var x2 = "34";//In quotes, represents as strings,not a number
+					</code></pre>
+			</section>
+			<section>
+				<h2>String</h2>
+				<ul>
+				<li>Strings are used to store data that involves characters, like names or addresses.</li>
+				<li>You can perform operations like string concatenation, in JavaScript.</li>
+				<li>Strings are written with quotes. We can use single or double quotes</li>
+				 </ul>	
+			</section>
+			<section>
+			<data-auto-animate>
+				<h4 data-id="code-title">Example</h4>
+				<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+					var str = "Hello";
+					var str2 = 'Single quotes are ok too';
+					var phrase = str + " " + str2; //concatenation of strings 
+					document.write(phrase)
+					//Output
+					//Hello Single quotes are ok too
+
+				</code></pre>
+
+				<h4 data-id="code-title">wrong syntax Example</h4>
+				<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+					var str = Hello;
+					var str2 = 'Single quotes are ok too';
+					var phrase = str + " " + str2; //concatenation of strings 
+					document.write(phrase)
+					//Output
+					//Hello is not defined or unexpected identifier
+					
+			</code></pre>
+			</section>
+			<section>
+				<h2>Boolean</h2>
+				<ul>
+				<li>Boolean type only has 2 types of return values, true and false.</li>
+				<li>This type is usually used to check if something is correct or incorrect.</li>
+				 </ul>	
+			<data-auto-animate>
+				<h4 data-id="code-title">Example</h4>
+				<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+					var x = 5;
+					var y = 5;
+					var z = 6;
+					(x == y)       // Returns true
+					(x == z)       // Returns false
+				</code></pre>
+			</section>
+			<section>
+				<h2>Null value</h2>
+				<ul>
+				<li>A null value is used to declare a variable as empty, or as a variable with an unknown value</li>
+				 </ul>	
+			<data-auto-animate>
+				<h4 data-id="code-title">Example</h4>
+				<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+					var age = null ; // assigned a null value
+					document.write("age is " + age);
+					//Output
+					//age is null 
+				</code></pre>
+				<data-auto-animate>
+					<h4 data-id="code-title">wrong syntax Example</h4>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						var age = 30; //we assigned a value
+						document.write("age is " + age);
+						//Output
+						//age is 30 ,not a null value as it is assigned
+					</code></pre>
+				
+			</section>
+			<section>
+				<h2>Undefined value</h2>
+				<ul>
+				<li>An undefined value is very similar to null value as it also makes a type of its own. </li>
+				<li>The meaning of undefined is “value is not assigned”.</li>
+				 </ul>	
+			</section>
+			<section>
+			<data-auto-animate>
+				<h4 data-id="code-title">Example</h4>
+				<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+					var age = ; //not assigned a value
+					document.write("age is " + age);
+					//Output
+					//age is a undefined
+				</code></pre>
+				<data-auto-animate>
+					<h4 data-id="code-title">Wrong syntax Example</h4>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						var age = 30; //we assigned a value
+						document.write("age is " + age);
+						//Output
+						//age is 30 ,not a undefined value as it is assigned
+					</code></pre>
+			</section>
+			<section>
+				<h2>Objects</h2>
+				<ul>
+				<li>The object is a complex data type that allows you to store collections of data.</li>
+				<li>An object contains properties, defined as a key-value pair.</l>
+				<li>property key (name) is always a string, but the value can be any data type, like strings, numbers, booleans, or complex data types like arrays, function and other objects. </li>
+				<li>JavaScript objects are written with curly braces {}.</li> 
+			    </ul>	
+				 </section>
+
+			<section data-auto-animate>
+				<h4 data-id="code-title">Example</h4>
+				<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+					var person = {
+						firstName : "John",
+						lastName  : "Doe",
+						age       : 50,
+						eyeColor  : "blue"
+					  };
+					  document.write(person.firstName + " is " + person.age + " years old.");
+					  //Output
+					  //John is 50 years old.
+				</code></pre>
+				<data-auto-animate>
+					<h4 data-id="code-title">Wrong Syntax Example</h4>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						var person = (
+							firstName : "John",
+							lastName  : "Doe",
+							age       : 50,
+							eyeColor  : "blue"
+						);
+						  document.write(person.firstName + " is " + person.age + " years old.");
+						  //Output
+						  //undefined
+					</code></pre>
+
+			</section>
+
+			<section>
+				<img src="images/dataype 1.png">
+			</section>
+			<section>
+						<h3>Exercise:</h3>
+						<ul>
+					    <li><p>Declare two variable<br>
+						 Assign two string variable<br>
+						Print it using concatenation </p></li>
+						<li><p>write  two program showing undefined and null value</p></li>
+						</ul>
+						</section>
+						<section>
+							<h3>Exercise:</h3>
+							<ul>
+							<li><p>write a program of object datatype using four properties below<br>
+								firstName,<br>
+								lastName,<br>
+								age,<br>
+								and eyeColor<br></p></li>                    
+							 </ul>
+							 </section>
+						<section>
+						<h3>Exercise:</h3>
+						<ul>
+						<li><p>Use comments to describe the correct data type of the following variables:<br>
+						 var length = 16; //----------<br>
+						 var lastName = "Johnson"; //-------<br>
+						 x = { <br>
+						 firstName: "John",<br>
+						 lastName: "Doe" <br>
+						 }; //----------<br></p></li>                    
+						 </ul>
+						 </section>
+						 <section>
+							<h3>Exercise:</h3>
+							<ul>
+							<li><p>please identify which type of data holding in each variable<br>
+							 var myNum = 20; //----------<br>
+							 var Name = "Johnson"; //-------<br>
+							 var result="true"//------------<br>
+							 var number;//-------------------<br></p></li>                    
+							 </ul>
+							 </section>
+							 
+			<section>
+				<h3>Useful Resources and Interesting Examples</h3>
+				<ul>
+					<li><p>JavaScript Tutorials</p></li>
+					<p>For ref:- <a href="http://www.w3schools.com/">http://www.w3schools.com/</a>.</p>
+					<p>For ref:- <a href="https://www.w3resource.com/">https://www.w3resource.com/</a>.</p>            
+				</ul>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+	</body>
+</html>
