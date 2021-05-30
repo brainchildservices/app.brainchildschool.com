@@ -204,7 +204,7 @@
 =========================================================================================== */
 
 .video-area {
-	background: url(../img/video-area-bg.png) no-repeat center;
+	background: url(~/img/video-area-bg.png) no-repeat center;
 	@media (max-width: 991px) {
 		background: #828bb2;
 		padding: 60px 0px;
@@ -381,7 +381,7 @@
 //--------- End Testimonials Area -------------//
 //--------- Start Registration Area -------------//
 .registration-area {
-	background: url(../img/registration-bg.png) no-repeat center;
+	background: url(~/img/registration-bg.png) no-repeat center;
 	padding: 157px 0px;
 	@media (max-width: 991px) {
 		padding: 60px 0px;

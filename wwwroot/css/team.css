@@ -1,12 +1,12 @@
 .team-banner-area {
-    background: url(../img/banner-bg1.png) no-repeat bottom;
+    background: url(/img/banner-bg1.png) no-repeat bottom;
     background-position: bottom;
     min-height: 510px;
 }
 
 @media (max-width: 768px) {
     .team-banner-area {
-        background: url(../img/banner-bg1.png) no-repeat bottom;
+        background: url(/img/banner-bg1.png) no-repeat bottom;
         background-position: bottom;
         min-height: 610px;
     }
