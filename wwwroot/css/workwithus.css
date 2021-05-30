@@ -1,12 +1,19 @@
 .work-banner-area {
-    background: url(../img/banner-bg.png) no-repeat center;
+    background: url(../img/banner-bg.png) no-repeat;
     min-height: 510px;
+}
+
+@media (max-width: 768px) {
+    .work-banner-area {
+        background: url(../img/banner-bg1.png) no-repeat bottom;
+        background-position: bottom;
+        min-height: 610px;
+    }
 }
 
 .work-banner-right {
     margin-top: 140px;
     text-align: right;
-   
 }
 
 @media (max-width: 1199px) {
@@ -15,18 +22,25 @@
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .work-banner-right h1 {
-        font-size: 30px;
+        font-size: 35px;
     }
 }
 
-@media (max-width: 767px) {
-    .work-banner-right p {
+@media (max-width: 768px) {
+    #hidepara {
         display: none;
     }
 }
-.work-banner-right p{
+
+@media (max-width: 768px) {
+    #paragraph {
+        text-align: justify;
+    }
+}
+
+.work-banner-right p {
     font-size: 14px;
 }
 
@@ -70,25 +84,170 @@
     color: #222222;
 }
 
-.work-contact h4{
+.work-contact h4 {
     font-weight: 700;
     margin-bottom: 15px;
 }
 
-.work-contact h3{
-    font-weight:bolder;
+.work-contact h3 {
+    font-weight: bolder;
 }
 
-.work-contact .row{
+.work-contact .row {
     margin-top: 50px;
 }
+
 @media screen and (max-width: 601px) {
     .work-contact h4 {
-      font-size: 18px;
+        font-size: 18px;
     }
-  }
+}
+
 @media screen and (max-width: 601px) {
     .work-contact h3 {
-      font-size: 20px;
+        font-size: 20px;
     }
-  }
+}
+
+.work-about-area {
+    padding-top: 0.1px;
+}
+
+@media (max-width: 991px) {
+    .work-about-area .about-left {
+        margin-bottom: 50px;
+    }
+}
+
+.about-right h1 {
+    margin-bottom: 30px;
+    color: #222;
+}
+
+@media (max-width: 991px) {
+    .about-right h1 {
+        font-size: 35px;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-right h1 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 991px) {
+    .about-right h1 br {
+        display: none;
+    }
+}
+
+.about-right p:last-of-type {
+    margin-bottom: 0;
+}
+
+.work-video-area {
+    background:url(../img/video-area-bg.png) no-repeat center;
+    padding-top: 18px;
+}
+
+@media (max-width: 991px) {
+    .work-video-area {
+        background: #828bb2;
+        padding: 60px 0px;
+    }
+}
+
+.work-video-area .video-part {
+    position: relative;
+}
+
+.work-video-area .video-part .overlay {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.work-video-area .video-part .popup-youtube {
+    position: absolute;
+    left: 0px;
+    text-align: center;
+    width: 100%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.work-video-area .play-icon {
+    width: auto !important;
+    margin: auto;
+}
+
+.work-video-area .video-left {
+    padding-bottom: 151px;
+}
+
+@media (max-width: 991px) {
+    .work-video-area .video-left {
+        padding-bottom: 0px;
+    }
+}
+
+.work-video-area .owl-controls {
+    position: relative;
+    bottom: -100px;
+}
+
+@media (max-width: 991px) {
+    .work-video-area .owl-controls {
+        display: none;
+    }
+}
+
+.work-video-area .owl-controls .owl-nav {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.work-video-area .owl-controls .owl-prev {
+    padding-right: 20px;
+}
+
+.work-video-area .owl-controls .owl-prev,
+.work-video-area .owl-controls .owl-next {
+    -webkit-filter: brightness(1) invert(1);
+    -moz-filter: brightness(1) invert(1);
+    -ms-filter: brightness(1) invert(1);
+    -o-filter: brightness(1) invert(1);
+    filter: brightness(1) invert(1);
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.work-video-area .owl-controls .owl-prev:hover,
+.work-video-area .owl-controls .owl-next:hover {
+    -webkit-filter: brightness(0) invert(1);
+    -moz-filter: brightness(0) invert(1);
+    -ms-filter: brightness(0) invert(1);
+    -o-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
+}
+
+#points {
+    list-style: none;
+    margin-left: 1rem;
+}
+
+#points li::before {
+    content: "\2022";
+    color: #9934f0;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: 1em;
+    font-size: 1.3rem;
+}

@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>variable.js – The HTML Presentation Framework</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/sky.css" id="theme">
+
+	
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+
+			<div class="slides">
+
+                <section data-background="https://static.slid.es/reveal/image-placeholder.png">
+                    <h2>JavaScript</h2>
+                    <ul>
+						<li>Variables</li>
+                    </ul>
+                    
+                </section>
+
+                <section>
+					<h2>variable JavaScript</h2>
+					<ul>
+                        <li>variable are used to store information to be referenced & manipulated in a computer program.</li>
+                        <li>In programming, a variable is a value that can be changed depending on the conditions or information being passed to the program.</li>
+                        <li>Before you use a variable in a JavaScript program, you must declare it. Variables are declared with the var keyword</li>
+                     			
+					
+				</section>
+                    
+				<section>
+					<h2>variable JavaScript</h2>
+					<ul>
+                        <li>Variables can be thought of as named containers.</li>
+						<li>You can place data into these containers and then refer to the data simply by naming the container. </li>
+                        <li>You can also declare multiple variables with the same var keyword </li>
+					</ul>
+						
+					
+				</section>
+				<section>
+					<h4>How to write a variable name</h4>
+					<table>
+						<thead>
+							<tr>
+								<th>Valid Variable Name</th>
+								<th>Invalid Variable Name</th>	
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>firstname</td>
+								<td>var // var is reserved word.</td>
+							</tr>
+							<tr>
+								<td>first_name</td>
+								<td>77employee // Initial character is a number</td>
+							</tr>
+							<tr>
+								<td>first-name</td>
+								<td>Variable%name // % character is not allowed.</td>
+							</tr>
+							<tr>
+								<td>firstName</td>
+								<td>Name&code // & is not allowed.</td>
+							</tr>
+							<tr>
+								<td>firstname99</td>
+							</tr>
+
+						</tbody>
+					</table>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="code-title">Declaring JavaScript Variable </h3>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						Var a;
+						Var name;
+						Var carName;
+
+					</code></pre>
+				</section>
+                         
+				<section data-auto-animate>
+					<h3 data-id="code-title">Declaring JavaScript Variable and Assign value to the Variable </h3>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						Var a =5;
+						Var name = “Angel”;
+						Var carName=“Aston”;
+
+					</code></pre>
+				</section>
+
+
+
+                <section data-auto-animate>
+					<h4 data-id="code-title">In this example, x, y, and z, are variables, declared with the var keyword:</h4>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						&lthtml&gt;
+						&ltbody&gt;
+						&ltscript&gt;
+						var firstNumber = 5;// firstNumber stores the value 5
+						var secondNumber = 6;//secondNumber stores the value 6
+						var total = firstNumber + secondNumber;//total stores the value 11
+						&lt/script&gt;
+						&lt/body&gt;
+						&lt/html&gt;
+					</code></pre>
+				</section>
+				<section>
+					<h3>JavaScript "document.write"</h3>
+					<ul>
+                            <li>One of the most basic JavaScript commands is document. write. This simply prints the specified text to the page.</li>
+							<li>To print text literally, enter the text in single quote marks inside parentheses</li>
+							<li>E.g.:- document.write('Hello World!');</li>
+						    <li>The code above will cause the phrase "Hello World!" to appear on the page</li>                      
+					</ul>
+				</section>
+
+				<section>
+					<h3>JavaScript "document.write"</h3>
+					<ul>
+                        
+						<li>we can also use document.write to print variables.</li>
+							<p>Enter the variable name without quotes.</p>
+							<P>e.g. var myText = "Hello again";</P>
+							<p>document.write(myText);</p>                
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="code-title">How to use it? </h3>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						&lthtml&gt;
+						&ltbody&gt;
+						&ltscript&gt
+						var firstNumber = 5;// firstNumber stores the value 5
+						var secondNumber = 6;//secondNumber stores the value 6
+						var total = firstNumber + secondNumber;//total stores the value 11
+						document.write(total)//To print Variable
+						&lt/script&gt
+						&lt/body&gt;
+						&lt/html&gt;                  
+					</code></pre>
+				</section>
+				<section>
+					<h3>JavaScript Alert</h3>
+					<ul>
+                        <li><p>A JavaScript alert is a simple window containing a message.</p></li>
+						<li><p>An alert box is often used if you want to make sure information comes through to the user.</p></li>
+						<li><p>The alert box takes the focus away from the current window, and forces the browser to read the message.</p></li>    
+					</ul>
+					</section>
+					<section>
+						<li>E.g. alert("Hello world!");</li>
+						<img src="/images/alert.png">
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="code-title">How to use it? </h3>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						&lthtml&gt;
+						&ltbody&gt;
+						&ltscript&gt
+						var firstNumber = 5;// firstNumber stores the value 5
+						var secondNumber = 6;//secondNumber stores the value 6
+						var total = firstNumber + secondNumber;//total stores the value 11
+						document.write(total)//To print Variable total 11
+						alert(total)// to alert variable total 11
+						&lt/script&gt
+						&lt/body&gt;
+						&lt/html&gt;                  
+					</code></pre>	
+					</section>
+					<section>
+						<h3>Using console.log()</h3>
+						<ul>
+							<li>For debugging purposes, you can call the console.log() method in the browser to display data.</li>
+							<li>If your browser supports debugging, you can use console.log() to display JavaScript values in the debugger window:</li>                   
+						</ul>
+						</section>
+						<section data-auto-animate>
+							<h3 data-id="code-title">How to use it? </h3>
+							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						&lthtml&gt;
+						&ltbody&gt;
+						&ltscript&gt
+						var firstNumber = 5;// firstNumber stores the value 5
+						var secondNumber = 6;//secondNumber stores the value 6
+						var total = firstNumber + secondNumber;//total stores the value 11
+						console.log(total)//to display values in the debugger window
+						document.write(total)//To print Variable total 11
+						alert(total)// to alert variable total 11
+						&lt/script&gt
+						&lt/body&gt;
+						&lt/html&gt;  
+							</code></pre>	
+							</section>
+							<section>
+								<h3>prompt() Method</h3>
+								<ul>
+									<li>The prompt() method displays a dialog box that prompts the visitor for input.</li>
+									<li>The prompt() method returns the input value if the user clicks "OK". If the user clicks "cancel" the method returns null.</li> 
+									<li>The method accepts two arguments, but only one of them is necessary for the function to work:</li>
+										<p>prompt(text, defaultText)</p>
+								</ul>
+								</section>
+								<section data-auto-animate>
+									<h3 data-id="code-title">How to use it? </h3>
+									<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+										&lthtml&gt;
+										&ltbody&gt;
+										&ltscript&gt
+										var firstNumber = prompt("enter a number");//dialog box for input
+										var secondNumber =prompt("enter a number");//dialog box for input
+										var number1=parseInt(firstNumber);
+										var number2=parseInt(secondNumber);
+										var total = number1 + number2;//total stores the value 11
+										console.log(total)//to display values in the debugger window
+										document.write(total)//To print Variable total 11
+										alert(total)// to alert variable total 11
+										&lt/script&gt
+										&lt/body&gt;
+										&lt/html&gt;  	
+									</code></pre>	
+									</section>
+
+							<section>
+								<h3>Exercise:</h3>
+								<ul>
+									<li><p>In one word, if it is enclosed in quotation marks, what is it?</p></li>
+									<li><p>What is the keyword that declares a variable?</p></li>
+									<li><p>This statement...userName = "buddy5000";...is correct only if the variable has already been ______.</p></li> 
+									<li><p>Declare a variable without defining it. Then, in a second statement, assign it a string. (You've learned only one rule for naming variables so far, so it's the only one I'll hold you to.)</p></li>                    
+								</ul>
+								</section>
+								<section>
+									<h3>Exercise:</h3>
+									<ul>
+										<li><p>Write a program to declare an integer ?</p></li>
+										<li><p>Write a program to access an integer & assign value to an integer ?</p></li>
+										<li><p>Write a program Swap variable values using a temporary variable.</p></li> 
+										<li><p>Write a program Swap variable values without a temporary variable.</p></li>                    
+									</ul>
+									</section>
+									<section>
+										<h3>Exercise:</h3>
+										<ul>
+											<li><p>Create a variable called carName, assign the value Volvo to it.</p></li>
+											<li><p>Create a variable called x, assign the value 50 to it.</p></li>
+											<li><p>Create a variable called z, assign x + y to it, and display the result in an alert box.</p></li> 
+											<li><p>On one single line, declare three variables with the following names and values:
+												firstName = "John"lastName = "Doe"age = 35</p></li>                    
+										</ul>
+										</section>
+										<section>
+											<h3>Useful Resources and Interesting Examples</h3>
+											<ul>
+												<li><p>JavaScript Tutorials</p></li>
+												<p>For ref:- <a href="http://www.w3schools.com/">http://www.w3schools.com/</a>.</p>
+												<p>For ref:- <a href="https://www.w3resource.com/">https://www.w3resource.com/</a>.</p>            
+											</ul>
+											</section>
+			</div>
+
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+	</body>
+</html>
+
+

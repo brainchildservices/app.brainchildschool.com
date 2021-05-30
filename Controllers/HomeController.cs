@@ -23,10 +23,16 @@ namespace SimpleApp.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult ContactUs()
         {
             return View();
         }
+
+        public IActionResult WorkWithUs()
+        {
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

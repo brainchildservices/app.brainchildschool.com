@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>LearnJavaScript</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/sky.css" id="theme">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h2>JavaScript Syntax</h2>
+                <p> The syntax is the arrangement of elements and attributes to create well-formed documents in HTML and the logical (sense and reference) relationship between elements and the attributes of those elements.</p>
+            </section>
+            <section>
+                <section>
+                    <h2>Basic Syntax</h2>
+                    <ul>
+                        <li>JavaScript can be implemented using JavaScript statements that are placed within
+                            the Script HTML tags in a web page.
+                        </li>
+                        <li>
+                            Script tags containing JS can be placed anywhere within a webpage, but normally recommended
+                            to keep within the Head tag
+                        </li>
+                    </ul>
+                </section>
+                <section data-auto-animate>
+                    <h2 data-id="code-title">Basic Syntax Code</h2>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        <script>JavaScriptcode</script>
+                    </code></pre>
+                </section>
+            </section>
+        </div>
+    </div>
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+        Reveal.initialize({
+            hash: true,
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+        });
+    </script>
+</body>
+</html>
