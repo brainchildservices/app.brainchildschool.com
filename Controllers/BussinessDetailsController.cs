@@ -55,16 +55,16 @@ namespace SimpleApp
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BussinessID,EmailID,MobileNo,Subject,Message")] BussinessDetails bussinessDetails)
-        {
-            if (ModelState.IsValid)
-            {
+        public async Task<IActionResult> Contact([Bind("EmailID,MobileNo,Subject,Message")] BussinessDetails bussinessDetails)
+        {           
+                bussinessDetails.Message="QuickContact";
                 _context.Add(bussinessDetails);
                 await _context.SaveChangesAsync();
                 return RedirectToRoute("success");
-            }
-            return View(bussinessDetails);
+            
         }
+
+        
 
         // GET: BussinessDetails/Edit/5
         public async Task<IActionResult> Edit(int? id)

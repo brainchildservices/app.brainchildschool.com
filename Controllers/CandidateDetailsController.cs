@@ -74,6 +74,23 @@ namespace SimpleApp
             return View(candidateDetails);
         }
 
+         [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Contact([Bind("Name,MobileNo,EmailID")] QuickCandidateForm candidateForm)
+        {
+           
+                CandidateDetails candidateDetails = new CandidateDetails(){
+                    EmailID=candidateForm.EmailID,
+                    MobileNo=candidateForm.MobileNo,
+                    Message=candidateForm.Name,
+                    TypeId=1,
+                    Attendance="QuickContactForm"
+                };
+                _context.Add(candidateDetails);
+                await _context.SaveChangesAsync();
+                return RedirectToRoute("success");
+        }
+
         // GET: CandidateDetails/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
