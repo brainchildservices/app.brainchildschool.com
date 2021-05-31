@@ -30,12 +30,13 @@ body {
 }
 
 .half-txt {
-    width: 60%;
+    width: 98%;
     margin: 0 auto;
     display: inline-block;
     line-height: 25px;
     color: #7e7e7e;
     margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 .text-uppercase {

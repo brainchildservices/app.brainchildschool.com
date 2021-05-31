@@ -60,5 +60,19 @@ namespace SimpleApp.Controllers
         {
             return View();
         }
+
+        public IActionResult FAQ()
+        {
+            return View();
+        }
+
+        public IActionResult Course()
+        {
+            return View();
+        }
+        public IActionResult TermsOfUse()
+        {
+            return View();
+        }
     }
 }
