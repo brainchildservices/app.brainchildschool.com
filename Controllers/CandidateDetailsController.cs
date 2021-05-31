@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,10 +14,14 @@ namespace SimpleApp
     public class CandidateDetailsController : Controller
     {
         private readonly CanditateDbContext _context;
+        
+        private readonly IConfiguration _configuration;
 
-        public CandidateDetailsController(CanditateDbContext context)
+
+        public CandidateDetailsController(CanditateDbContext context, IConfiguration configuration)
         {
             _context = context;
+            _configuration=configuration;
         }
 
         // GET: CandidateDetails
