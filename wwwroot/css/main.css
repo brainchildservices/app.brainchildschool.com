@@ -1588,7 +1588,7 @@ th {
 }
 
 .single-popular-course .thumb img {
-    width: 25%;
+    width: 100%;
     -webkit-transition: all 0.3s ease 0s;
     -moz-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
