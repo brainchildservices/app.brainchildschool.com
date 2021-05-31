@@ -151,3 +151,12 @@ small {
     text-align: center;
     margin-top: 1.5rem;
 }
+
+#impnote{
+    width:100%;
+    background: #888c94;
+}
+
+.amount{
+    font:bold !important;
+}
