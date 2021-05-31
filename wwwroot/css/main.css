@@ -5175,5 +5175,17 @@ strong {
     }
 }
 
+.selection {
+    border: 1px solid #ced4da !important;
+    border-radius: 5px !important;
+    height: 40px !important;
+    background: #ffffff !important;
+    padding-left: 0 !important;
+    padding-right: 40px !important;
+    width: 100% !important;
+}
+
+
+}
 
 /*# sourceMappingURL=main.css.map */
