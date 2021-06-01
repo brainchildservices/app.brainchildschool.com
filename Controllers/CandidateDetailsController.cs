@@ -8,53 +8,85 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SimpleApp.Dbcontext;
 using SimpleApp.Models;
+using Microsoft.Extensions.Logging;
 
 namespace SimpleApp
 {
     public class CandidateDetailsController : Controller
     {
+        private readonly ILogger<CandidateDetailsController> _logger;
         private readonly CanditateDbContext _context;
         
         private readonly IConfiguration _configuration;
 
 
-        public CandidateDetailsController(CanditateDbContext context, IConfiguration configuration)
+        public CandidateDetailsController(CanditateDbContext context, IConfiguration configuration,ILogger<CandidateDetailsController> logger)
         {
             _context = context;
             _configuration=configuration;
+            _logger=logger;
         }
 
         // GET: CandidateDetails
         public async Task<IActionResult> Index()
         {
-            var canditateDbContext = _context.CandidateDetails.Include(c => c.EducationLevel);
-            return View(await canditateDbContext.ToListAsync());
+            try
+            {
+                _logger.LogInformation("The candidate index page has been accessed");                  
+                var canditateDbContext = _context.CandidateDetails.Include(c => c.EducationLevel);
+                return View(await canditateDbContext.ToListAsync());
+                
+            }
+            catch (System.Exception ex)
+            {
+                _logger.LogError(ex,ex.Message);
+                throw;
+            }
+            
         }
 
         // GET: CandidateDetails/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
+            try
             {
-                return NotFound();
-            }
+                _logger.LogInformation("The candidate details page has been accessed");    
+                if (id == null)
+                {
+                    return NotFound();
+                }
 
-            var candidateDetails = await _context.CandidateDetails
-                .Include(c => c.EducationLevel)
-                .FirstOrDefaultAsync(m => m.CandidateID == id);
-            if (candidateDetails == null)
+                var candidateDetails = await _context.CandidateDetails
+                    .Include(c => c.EducationLevel)
+                    .FirstOrDefaultAsync(m => m.CandidateID == id);
+                if (candidateDetails == null)
+                {
+                    return NotFound();
+                }
+
+                return View(candidateDetails);
+            }
+            catch (System.Exception ex)
             {
-                return NotFound();
+                _logger.LogError(ex,ex.Message);
+                throw;
             }
-
-            return View(candidateDetails);
         }
 
         // GET: CandidateDetails/Apply
         public IActionResult Apply()
         {
-            ViewData["TypeId"] = new SelectList(_context.EducationLevel, "TypeId", "EducationType");
-            return View();
+            try
+            {
+                _logger.LogInformation("The candidate apply page has been accessed");   
+                ViewData["TypeId"] = new SelectList(_context.EducationLevel, "TypeId", "EducationType");
+                return View();
+            }
+            catch (System.Exception ex)
+            {
+                _logger.LogError(ex,ex.Message);
+                throw;
+            }
         }
 
         // POST: CandidateDetails/Apply
@@ -64,20 +96,30 @@ namespace SimpleApp
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Apply([Bind("CandidateID,EmailID,MobileNo,TypeId,Shedule,Attendance,Message")] CandidateDetails candidateDetails)
         {
-            if (ModelState.IsValid)
+            try
             {
-                _context.Add(candidateDetails);
-                await _context.SaveChangesAsync();
-                return RedirectToRoute("success");
+                if (ModelState.IsValid)
+                {
+                    _context.Add(candidateDetails);
+                    await _context.SaveChangesAsync();
+                    return RedirectToRoute("success");
+                }
+                ViewData["TypeId"] = new SelectList(_context.EducationLevel, "TypeId", "EducationType", candidateDetails.TypeId);
+                return View(candidateDetails);
             }
-            ViewData["TypeId"] = new SelectList(_context.EducationLevel, "TypeId", "EducationType", candidateDetails.TypeId);
-            return View(candidateDetails);
+            catch (System.Exception ex)
+            {
+                _logger.LogError(ex,ex.Message);
+                throw;
+            }
         }
 
          [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Contact([Bind("Name,MobileNo,EmailID")] QuickCandidateForm candidateForm)
         {
+            try
+            {
            
                 CandidateDetails candidateDetails = new CandidateDetails(){
                     EmailID=candidateForm.EmailID,
@@ -89,23 +131,36 @@ namespace SimpleApp
                 _context.Add(candidateDetails);
                 await _context.SaveChangesAsync();
                 return RedirectToRoute("success");
+            }
+            catch (System.Exception ex)
+            {
+                _logger.LogError(ex,ex.Message);
+                throw;
+            }
         }
 
         // GET: CandidateDetails/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
+            try{
+                if (id == null)
+                {
+                    return NotFound();
+                }
+    
+                var candidateDetails = await _context.CandidateDetails.FindAsync(id);
+                if (candidateDetails == null)
+                {
+                    return NotFound();
+                }
+                ViewData["TypeId"] = new SelectList(_context.EducationLevel, "TypeId", "EducationType", candidateDetails.TypeId);
+                return View(candidateDetails);
             }
-
-            var candidateDetails = await _context.CandidateDetails.FindAsync(id);
-            if (candidateDetails == null)
+            catch (System.Exception ex)
             {
-                return NotFound();
+                _logger.LogError(ex,ex.Message);
+                throw;
             }
-            ViewData["TypeId"] = new SelectList(_context.EducationLevel, "TypeId", "EducationType", candidateDetails.TypeId);
-            return View(candidateDetails);
         }
 
         // POST: CandidateDetails/Edit/5
@@ -115,33 +170,41 @@ namespace SimpleApp
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("CandidateID,EmailID,MobileNo,TypeId,Shedule,Attendance,Message")] CandidateDetails candidateDetails)
         {
-            if (id != candidateDetails.CandidateID)
+            try
             {
-                return NotFound();
-            }
+                if (id != candidateDetails.CandidateID)
+                {
+                    return NotFound();
+                }
 
-            if (ModelState.IsValid)
-            {
-                try
+                if (ModelState.IsValid)
                 {
-                    _context.Update(candidateDetails);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!CandidateDetailsExists(candidateDetails.CandidateID))
+                    try
                     {
-                        return NotFound();
+                        _context.Update(candidateDetails);
+                        await _context.SaveChangesAsync();
                     }
-                    else
+                    catch (DbUpdateConcurrencyException)
                     {
-                        throw;
+                        if (!CandidateDetailsExists(candidateDetails.CandidateID))
+                        {
+                            return NotFound();
+                        }
+                        else
+                        {
+                            throw;
+                        }
                     }
+                    return RedirectToAction(nameof(Index));
                 }
-                return RedirectToAction(nameof(Index));
+                ViewData["TypeId"] = new SelectList(_context.EducationLevel, "TypeId", "EducationType", candidateDetails.TypeId);
+                return View(candidateDetails);
             }
-            ViewData["TypeId"] = new SelectList(_context.EducationLevel, "TypeId", "EducationType", candidateDetails.TypeId);
-            return View(candidateDetails);
+            catch (System.Exception ex)
+            {
+                _logger.LogError(ex,ex.Message);
+                throw;
+            }
         }
 
         // GET: CandidateDetails/Delete/5
