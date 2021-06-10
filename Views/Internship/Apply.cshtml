@@ -1,0 +1,96 @@
+﻿@model SimpleApp.Models.CandidateDetails
+
+@{
+    ViewData["Title"] = "Apply";
+}
+
+<!-- ================ start banner Area ================= -->
+<section class="contact-banner-area">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-12 contact-banner-right">
+                <h1 class="text-white">
+                    Internship
+                </h1>
+                <p class="mx-auto text-white  mt-20 mb-40">Want to join our Internship programme?<br /> Apply here to start your Internship.</p>
+                <p class="mx-auto text-white  mt-20 mb-40" id="hidepara">We offer a glimpse of web development in just a click!</p>
+                <div class="link-nav">
+                    <span class="box">
+                        <a href="/">Home </a>
+                        <i class="lnr lnr-arrow-right"></i>
+                        <a href="/contactus">Contact</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ================ End banner Area ================= -->
+<div class="container">
+
+    <h1>Virtual internship</h1>
+    <br />
+
+    <h4>Please  Fill up the form, we'll contact you soon.</h4>
+    <br />
+    <hr />
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-controller="Internship" asp-action="Apply">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <h3>Email Address<span> *</span></h3><br />
+                    <input asp-for="EmailID" class="form-control" />
+                    <span asp-validation-for="EmailID" class="text-danger" type="email" pattern="@@+.com"></span>
+                </div>
+                <div class="form-group">
+                    <h3>Mobile Number<span> *</span></h3><br />
+                    <input asp-for="MobileNo" class="form-control" />
+                    <span asp-validation-for="MobileNo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <h3>Educational Quallification<span>*</span></h3><br />       
+                    <div class=" form-select " id=" default-select">             
+                        <select asp-for="TypeId" class="form-control-Select" asp-items="ViewBag.TypeId"></select>
+                    </div>
+                    
+                </div>
+                <div class="form-group">
+                    <h3>Schedule<span>*</span></h3><br />
+                    <div class=" form-select " id=" default-select"> 
+                    <select asp-for="Shedule" asp-items="Html.GetEnumSelectList<Shedule>()"></select>
+                    <span asp-validation-for="Shedule" class="text-danger"></span>
+                    <br>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h3>Will you be able to attend 95% of Classes ?<span>*</span></h3><br />
+                    <label class="radio-inline"><input type="radio" id="radiobtn" name="attendance" value="Yes"> Yes</label>
+                    <label class="radio-inline"><input type="radio" id="radiobtn" name="attendance" value="No"> No</label>
+                    <span asp-validation-for="Attendance" class="text-danger"></span>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group" id="butn">
+                        <input type="submit" value="Apply" class="btn btn-primary" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    var rates = document.getElementById('attendance').value;
+    if (document.getElementById('radiobtn').checked) {
+        rate_value = document.getElementById('radiobtn').value;
+    }
+    else {
+        $("input[type='radio'][name='attendance']:checked").val();
+    }
+</script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
