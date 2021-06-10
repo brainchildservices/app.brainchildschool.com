@@ -22,6 +22,7 @@ namespace SimpleApp.Models
         public Shedule Shedule { get; set; }
         [Required]
         public string Attendance { get; set; }
+        [Required]
         public string Message { get; set; }
     }
 }

@@ -53,13 +53,11 @@ namespace SimpleApp
         {
             try
             {
-                if (ModelState.IsValid)
-                {
                     _context.Add(candidateDetails);
                     candidateDetails.Message="InternshipProgramme";
                     await _context.SaveChangesAsync();
                     return RedirectToRoute("success");
-                }
+                    
                 ViewData["TypeId"] = new SelectList(_context.EducationLevel, "TypeId", "EducationType", candidateDetails.TypeId);
                 return View(candidateDetails);
             }
