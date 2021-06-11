@@ -40,8 +40,8 @@
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
                     <h3>Email Address<span> *</span></h3><br />
-                    <input asp-for="EmailID" class="form-control" />
-                    <span asp-validation-for="EmailID" class="text-danger" type="email" pattern="@@+.com"></span>
+                    <input asp-for="EmailID" class="form-control" required="" type="email" pattern="[a-z0-9._%+-]+@@[a-z0-9.-]+\.[a-z]{2,}" />
+                    <span asp-validation-for="EmailID" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <h3>Mobile Number<span> *</span></h3><br />
@@ -65,7 +65,7 @@
                 </div>
                 <div class="form-group">
                     <h3>Will you be able to attend 95% of Classes ?<span>*</span></h3><br />
-                    <label class="radio-inline"><input type="radio" id="radiobtn" name="attendance" value="Yes"> Yes</label>
+                    <label class="radio-inline"><input type="radio" id="radiobtn" name="attendance" value="Yes" checked="checked"> Yes</label>
                     <label class="radio-inline"><input type="radio" id="radiobtn" name="attendance" value="No"> No</label>
                     <span asp-validation-for="Attendance" class="text-danger"></span>
                 </div>
