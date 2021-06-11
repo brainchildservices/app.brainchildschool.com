@@ -68,9 +68,9 @@
                     <form class="form-area contact-form text-right" id="myForm" asp-controller="BussinessDetails" asp-action="Contact" >
                         <div class="row">
                             <div class="col-lg-6 form-group">
-                                <input name="mobileno" placeholder="Enter your Contact No" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text">
+                                <input name="mobileno" placeholder="Enter your Contact No." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your Contact No.'" class="common-input mb-20 form-control" required=""  type="tel"  pattern="[789][0-9]{9}">
 
-                                <input name="emailid" placeholder="Enter email address"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common-input mb-20 form-control" required="" type="email">
+                                <input name="emailid" placeholder="Enter email address"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common-input mb-20 form-control" required="" type="email" pattern="[a-z0-9._%+-]+@@[a-z0-9.-]+\.[a-z]{2,}" >
 
                                 <input name="subject" placeholder="Enter subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter subject'" class="common-input mb-20 form-control" required="" type="text">
                             </div>
