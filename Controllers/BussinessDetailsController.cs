@@ -9,9 +9,10 @@ using SimpleApp.Dbcontext;
 using SimpleApp.Models;
 using SimpleApp;
 using Microsoft.Extensions.Logging;
-
+using Microsoft.AspNetCore.Authorization;
 namespace SimpleApp
 {
+    
     public class BussinessDetailsController : Controller
     {
         private readonly ILogger<BussinessDetailsController> _logger;
@@ -85,6 +86,7 @@ namespace SimpleApp
         // POST: BussinessDetails/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Contact([Bind("EmailID,MobileNo,Subject,Message")] BussinessDetails bussinessDetails)

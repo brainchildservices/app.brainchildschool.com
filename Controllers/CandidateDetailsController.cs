@@ -9,9 +9,10 @@ using Microsoft.EntityFrameworkCore;
 using SimpleApp.Dbcontext;
 using SimpleApp.Models;
 using Microsoft.Extensions.Logging;
-
+using Microsoft.AspNetCore.Authorization;
 namespace SimpleApp
 {
+   [Authorize]
     public class CandidateDetailsController : Controller
     {
         private readonly ILogger<CandidateDetailsController> _logger;
@@ -28,6 +29,7 @@ namespace SimpleApp
         }
 
         // GET: CandidateDetails
+        
         public async Task<IActionResult> Index()
         {
             try
@@ -74,6 +76,7 @@ namespace SimpleApp
         }
 
         // GET: CandidateDetails/Apply
+        [AllowAnonymous]
         public IActionResult Apply()
         {
             try
@@ -92,6 +95,7 @@ namespace SimpleApp
         // POST: CandidateDetails/Apply
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Apply([Bind("CandidateID,EmailID,MobileNo,TypeId,Shedule,Attendance,Message")] CandidateDetails candidateDetails)
